@@ -1,0 +1,37 @@
+.nav {
+
+    // .nav__list
+
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    // .nav__item
+
+    &__item {
+
+        &:not(:last-child) {
+            margin-right: 2.25rem;
+        }
+
+    }
+
+    // .nav__link
+
+    &__link {
+        font-family: $arialFontFamily;
+        font-size: .9375rem;
+        line-height: 160%;
+        color: #CDCDCD;
+        padding-bottom: 2px;
+
+        transition: border-bottom 0.2s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                border-bottom: solid 3px $primaryColor;
+            }
+        }
+    }
+}

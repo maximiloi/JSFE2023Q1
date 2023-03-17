@@ -1,0 +1,66 @@
+.not-only {
+    background: url('@img/desktop/noise_transparent@2x.png'),
+        radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+    margin-top: -7.5rem;
+
+    // .not-only__container
+
+    &__container {
+        background: url('@img/desktop/puppy.png') no-repeat calc(50% + 250px) 100%;
+
+        padding-top: 21.5625rem;
+        padding-bottom: 16.125rem;
+    }
+
+    // .not-only__wrapper
+
+    &__wrapper {}
+
+    // .not-only__title
+
+    &__title {
+        font-family: $georgiaFontFamily;
+        font-size: 2.75rem;
+        line-height: 3.5625rem;
+        color: $whiteColor;
+
+        max-width: 19.375rem;
+    }
+
+    // .not-only__text
+
+    &__text {
+        font-family: $arialFontFamily;
+        font-size: .9375rem;
+        line-height: 1.5rem;
+        color: $greyColor;
+
+        margin: 2.5rem 0 3.5625rem 0;
+
+        max-width: 28.75rem;
+    }
+
+    // .not-only__button
+
+    &__button {
+        font-family: $georgiaFontFamily;
+        font-size: 1.0625rem;
+        line-height: 1.375rem;
+        letter-spacing: 0.06em;
+        color: $buttonColor;
+
+        padding: .9375rem 2.8125rem;
+        background: #F1CDB3;
+        border-radius: 100px;
+
+        transition: background-color 0.3s ease;
+
+        // padding-bottom: 15.625rem;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $primaryColorHover;
+            }
+        }
+    }
+}
