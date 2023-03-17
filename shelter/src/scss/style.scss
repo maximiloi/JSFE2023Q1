@@ -22,6 +22,8 @@ $mainColor: #000; // Цвет шрифта по умолчанию
 $primaryColor: #F1CDB3;
 $primaryColorHover: #FDDCC4;
 $whiteColor: #FFFFFF;
+$titleColor: #545454;
+$textColor: #4C4C4C;
 $greyColor: #CDCDCD;
 $buttonColor: #292929;
 
@@ -155,6 +157,7 @@ body {
 @import "layout/logo";
 @import "layout/nav";
 @import "layout/not_only";
+@import "layout/about";
 @import "footer";
 
 // Подключение стилей отдельных страниц

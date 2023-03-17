@@ -560,7 +560,7 @@ h6 {
 }
 
 .not-only {
-  background: url("../img/desktop/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background: url("../img/desktop/noise_transparent.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
   margin-top: -7.5rem;
 }
 .not-only__container {
@@ -598,4 +598,40 @@ h6 {
   .not-only__button:hover {
     background-color: #FDDCC4;
   }
+}
+
+.about__container {
+  display: flex;
+  margin-top: 5rem;
+  margin-bottom: 6.25rem;
+}
+.about__inner {
+  width: 50%;
+}
+.about__inner:first-child {
+  background: url("../img/desktop/about-pets.jpg") no-repeat calc(50% + 25px) center;
+}
+.about__inner:last-child {
+  margin-left: -5px;
+}
+.about__title {
+  font-family: "Georgia";
+  font-size: 2.1875rem;
+  line-height: 2.8125rem;
+  letter-spacing: 0.06em;
+  color: #545454;
+  max-width: 23.125rem;
+  margin-top: 0.9375rem;
+  margin-bottom: 1.5625rem;
+}
+.about__text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  color: #4C4C4C;
+  max-width: 26.875rem;
+  margin-bottom: 1.5625rem;
+}
+.about__text:last-child {
+  margin: 0px 0px 15px 0px;
 }
