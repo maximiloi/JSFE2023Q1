@@ -1,0 +1,103 @@
+.help {
+
+    // .help__container
+
+    &__container {
+        padding-top: 5rem;
+        padding-bottom: 6.25rem;
+    }
+
+    // .help__title
+
+    &__title {
+        text-align: center;
+        max-width: 19.375rem;
+        margin: 0 auto;
+    }
+
+    // .help__list
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 55px 120px;
+
+        margin-top: 3.75rem;
+    }
+
+    // .help__item
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        font-size: 1.25rem;
+        line-height: 1.4375rem;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: $titleColor;
+
+        &:before {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 30px;
+        }
+
+
+        // .help__item--pet-food
+
+        &--pet-food:before {
+            content: url('@img/icons/help-pet-food.svg');
+        }
+
+        // .help__item--transportation
+
+        &--transportation:before {
+            content: url('@img/icons/help-transportation.svg');
+        }
+
+        // .help__item--toys
+
+        &--toys:before {
+            content: url('@img/icons/help-toys.svg');
+        }
+
+        // .help__item--bowls-and-cups
+
+        &--bowls-and-cups:before {
+            content: url('@img/icons/help-bowls-and-cups.svg');
+        }
+
+        // .help__item--shampoos
+
+        &--shampoos:before {
+            content: url('@img/icons/help-shampoos.svg');
+        }
+
+        // .help__item--vitamins
+
+        &--vitamins:before {
+            content: url('@img/icons/help-vitamins.svg');
+        }
+
+        // .help__item--medicines
+
+        &--medicines:before {
+            content: url('@img/icons/help-medicines.svg');
+        }
+
+        // .help__item--collars-leashes
+
+        &--collars-leashes:before {
+            content: url('@img/icons/help-collars-or-leashes.svg');
+        }
+
+        // .help__item--sleeping-areas
+
+        &--sleeping-areas:before {
+            content: url('@img/icons/help-sleeping-area.svg');
+        }
+    }
+}
