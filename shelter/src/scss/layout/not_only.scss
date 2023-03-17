@@ -42,25 +42,5 @@
 
     // .not-only__button
 
-    &__button {
-        font-family: $georgiaFontFamily;
-        font-size: 1.0625rem;
-        line-height: 1.375rem;
-        letter-spacing: 0.06em;
-        color: $buttonColor;
-
-        padding: .9375rem 2.8125rem;
-        background: #F1CDB3;
-        border-radius: 100px;
-
-        transition: background-color 0.3s ease;
-
-        // padding-bottom: 15.625rem;
-
-        @media (any-hover: hover) {
-            &:hover {
-                background-color: $primaryColorHover;
-            }
-        }
-    }
+    &__button {}
 }

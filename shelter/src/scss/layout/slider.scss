@@ -1,0 +1,104 @@
+.slider {
+    position: relative;
+
+    margin-top: 3.75rem;
+    margin-bottom: 3.5rem;
+
+    // .slider__wrapper
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        max-width: 61.875rem;
+        margin: 0 auto;
+    }
+
+    // .slider__slide
+
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background-color: $bgColorSlide;
+        border-radius: 9px;
+        overflow: hidden;
+    }
+
+
+    // .slider__img
+
+    &__img {}
+
+    // .slider__name
+
+    &__name {
+        text-align: center;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.06em;
+        color: #545454;
+        text-transform: capitalize;
+
+        margin-top: 1.875rem;
+    }
+
+    // .slider__nav
+
+    &__nav {
+        position: absolute;
+        top: calc(50% - 26px);
+
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    // .slider__nav-button
+
+    &__nav-button {
+        width: 52px;
+        height: 52px;
+        border: 2px solid $primaryColor;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                border: 2px solid $primaryColorHover;
+            }
+        }
+    }
+
+    &__nav-button--prev,
+    &__nav-button--next {
+        background: url('@img/icons/slider-arrow.svg') no-repeat 50% 50% / 14px 6px;
+        transition: background-color 0.3s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $primaryColorHover;
+            }
+        }
+    }
+
+    // .slider__nav--prev
+
+    &__nav-button--prev {}
+
+    // .slider__nav--next
+
+    &__nav-button--next {
+        transform: rotate(180deg);
+    }
+
+    // .slider__button
+
+    &__button {
+        display: block;
+        margin: 1.875rem auto;
+    }
+}

@@ -19,6 +19,8 @@ $fontSize: rem(15); // где 14(px) - размер шрифта по умолч
 
 // Основные цвета
 $mainColor: #000; // Цвет шрифта по умолчанию
+$bgColorGrey: #F6F6F6;
+$bgColorSlide: #FAFAFA;
 $primaryColor: #F1CDB3;
 $primaryColorHover: #FDDCC4;
 $whiteColor: #FFFFFF;
@@ -158,6 +160,8 @@ body {
 @import "layout/nav";
 @import "layout/not_only";
 @import "layout/about";
+@import "layout/our_friends";
+@import "layout/slider";
 @import "footer";
 
 // Подключение стилей отдельных страниц
