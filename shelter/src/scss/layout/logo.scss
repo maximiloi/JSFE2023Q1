@@ -8,6 +8,10 @@
         line-height: 2.1875rem;
         letter-spacing: 0.06em;
         color: $primaryColor;
+
+        .pets & {
+            color: $titleColor;
+        }
     }
 
     // .logo__subtitle
@@ -20,5 +24,9 @@
         color: $whiteColor;
         text-align: right;
         margin-top: .625rem;
+
+        .pets & {
+            color: $buttonColor;
+        }
     }
 }

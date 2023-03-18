@@ -1,14 +1,10 @@
 .not-only {
-    background: url('@img/desktop/noise_transparent.png'),
-        radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
-    margin-top: -7.5rem;
-
     // .not-only__container
 
     &__container {
         background: url('@img/desktop/puppy.png') no-repeat calc(50% + 250px) 100%;
 
-        padding-top: 21.5625rem;
+        padding-top: 14.0625rem;
         padding-bottom: 16.125rem;
     }
 

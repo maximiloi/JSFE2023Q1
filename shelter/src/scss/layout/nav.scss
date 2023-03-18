@@ -33,5 +33,18 @@
                 border-bottom: solid 3px $primaryColor;
             }
         }
+
+
+        .pets & {
+            color: $titleColor;
+
+            transition: color 0.2s ease;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $buttonColor;
+                }
+            }
+        }
     }
 }

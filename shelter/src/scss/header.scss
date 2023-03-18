@@ -1,5 +1,7 @@
 .header {
-	z-index: 2;
+	.pets & {
+		background: $whiteColor;
+	}
 
 	// .header__container
 
@@ -7,6 +9,11 @@
 		display: flex;
 		justify-content: space-between;
 		margin-top: 3.75rem;
+
+		.pets & {
+			margin-top: 1.875rem;
+			padding-bottom: 30px;
+		}
 	}
 
 	// .header__logo

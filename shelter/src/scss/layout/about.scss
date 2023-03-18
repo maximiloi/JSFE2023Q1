@@ -1,12 +1,13 @@
 .about {
+    background: $whiteColor;
 
     // .about__container
 
     &__container {
         display: flex;
 
-        margin-top: 5rem;
-        margin-bottom: 6.25rem;
+        padding-top: 5rem;
+        padding-bottom: 6.25rem;
     }
 
     // .about__inner
