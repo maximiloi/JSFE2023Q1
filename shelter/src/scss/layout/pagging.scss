@@ -1,0 +1,100 @@
+.pagging {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: 0 20px;
+
+	// .pagging__arrow
+
+	&__arrow {
+
+		font-family: $georgiaFontFamily;
+		font-size: 20px;
+		line-height: 23px;
+		letter-spacing: 0.06em;
+
+		color: $buttonColor;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 52px;
+		height: 52px;
+		border: 2px solid #F1CDB3;
+		border-radius: 50%;
+
+		transition: border 0.3s ease, background 0.3s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				border: 2px solid #FDDCC4;
+				background: #FDDCC4;
+			}
+		}
+
+		&._active {
+			cursor: default;
+			border: 2px solid #F1CDB3;
+			background: #F1CDB3;
+		}
+
+		&._disable {
+			cursor: default;
+			background: transparent;
+			border: 2px solid #CDCDCD;
+			color: #CDCDCD;
+
+		}
+	}
+
+
+	// .pagging__list
+
+	&__list {
+		display: flex;
+
+		li {}
+	}
+
+	// .pagging__item
+
+	&__item {
+		font-family: $georgiaFontFamily;
+		font-size: 20px;
+		line-height: 23px;
+		letter-spacing: 0.06em;
+
+		color: $buttonColor;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 52px;
+		height: 52px;
+		border: 2px solid #F1CDB3;
+		border-radius: 50%;
+
+		transition: border 0.3s ease, background 0.3s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				border: 2px solid #FDDCC4;
+				background: #FDDCC4;
+			}
+		}
+
+		&._active {
+			cursor: default;
+			border: 2px solid #F1CDB3;
+			background: #F1CDB3;
+		}
+
+		&._disable {
+			cursor: default;
+			background: transparent;
+			border: 2px solid #CDCDCD;
+			color: #CDCDCD;
+		}
+	}
+}

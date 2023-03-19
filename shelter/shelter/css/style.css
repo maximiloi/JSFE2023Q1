@@ -633,6 +633,10 @@ h6 {
   margin: 2.5rem 0 3.5625rem 0;
   max-width: 28.75rem;
 }
+.not-only__button {
+  padding: 17px 2.8125rem;
+}
+
 .about {
   background: #FFFFFF;
 }
@@ -684,12 +688,13 @@ h6 {
   display: block;
   text-align: center;
   margin: 0 auto;
+  padding: 15px 2.8125rem;
 }
 
 .slider {
   position: relative;
   margin-top: 3.75rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 60px;
 }
 .slider__wrapper {
   display: flex;
@@ -888,6 +893,7 @@ h6 {
   display: flex;
   flex-wrap: wrap;
   gap: 30px 40px;
+  margin-bottom: 60px;
 }
 .friends__pets {
   display: flex;
@@ -911,6 +917,80 @@ h6 {
   margin: 1.875rem auto;
 }
 
+.pagging {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 20px;
+}
+.pagging__arrow {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #292929;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #F1CDB3;
+  border-radius: 50%;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+@media (any-hover: hover) {
+  .pagging__arrow:hover {
+    border: 2px solid #FDDCC4;
+    background: #FDDCC4;
+  }
+}
+.pagging__arrow._active {
+  cursor: default;
+  border: 2px solid #F1CDB3;
+  background: #F1CDB3;
+}
+.pagging__arrow._disable {
+  cursor: default;
+  background: transparent;
+  border: 2px solid #CDCDCD;
+  color: #CDCDCD;
+}
+.pagging__list {
+  display: flex;
+}
+.pagging__item {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #292929;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #F1CDB3;
+  border-radius: 50%;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+@media (any-hover: hover) {
+  .pagging__item:hover {
+    border: 2px solid #FDDCC4;
+    background: #FDDCC4;
+  }
+}
+.pagging__item._active {
+  cursor: default;
+  border: 2px solid #F1CDB3;
+  background: #F1CDB3;
+}
+.pagging__item._disable {
+  cursor: default;
+  background: transparent;
+  border: 2px solid #CDCDCD;
+  color: #CDCDCD;
+}
+
 .footer__container {
   display: flex;
   margin-top: 2.5rem;
@@ -928,7 +1008,7 @@ h6 {
 .footer__inner:nth-child(2) .footer__item {
   max-width: 260px;
   margin-left: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 31px;
 }
 .footer__inner:last-child {
   background: url("../img/desktop/footer-puppy.png") no-repeat 100% 100%;
@@ -945,7 +1025,7 @@ h6 {
 .footer__item {
   position: relative;
   margin-left: 60px;
-  margin-bottom: 48px;
+  margin-bottom: 41px;
   display: flex;
   justify-content: space-between;
   align-items: center;
