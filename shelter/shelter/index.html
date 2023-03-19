@@ -5,7 +5,7 @@
 	<title>Shelter | iloi</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20230319163854">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230319173708">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,9 +23,9 @@
 				<nav class="header__nav  nav">
 					<ul class="nav__list">
 						<li class="nav__item"><a href="#" class="nav__link">About the shelter</a></li>
-						<li class="nav__item"><a href="#" class="nav__link">Our pets</a></li>
-						<li class="nav__item"><a href="#" class="nav__link">Help the shelter</a></li>
-						<li class="nav__item"><a href="#" class="nav__link">Contacts</a></li>
+						<li class="nav__item"><a href="pets.html" class="nav__link">Our pets</a></li>
+						<li class="nav__item"><a href="#help" class="nav__link">Help the shelter</a></li>
+						<li class="nav__item"><a href="#contacts" class="nav__link">Contacts</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -37,7 +37,7 @@
 						<h1 class="not-only__title">Not only people need a house</h1>
 						<p class="not-only__text">We offer to give a chance to a little and nice puppy with an extremely wide and
 							open heart. He or she will love you more than anybody else in the world, you will see!</p>
-						<a class="not-only__button  button" href="pets.html">Make a friend</a>
+						<a class="not-only__button  button" href="#our-friends">Make a friend</a>
 					</div>
 				</div>
 			</section>
@@ -59,28 +59,28 @@
 					</div>
 				</div>
 			</section>
-			<section class="our-friends">
+			<section class="our-friends" id="our-friends">
 				<div class="our-friends__container">
 					<h2 class="our-friends__title  title">Our friends who are&nbsp;looking for a house</h2>
 
 					<div class="our-friends__slider  slider">
 						<div class="slider__wrapper">
 							<figure class="slider__slide">
-								<picture><source srcset="img/pets/pets-katrine.webp" type="image/webp"><img class="slider__img" src="img/pets/pets-katrine.jpg?_v=1679233135009" alt="pets katrine"></picture>
+								<picture><source srcset="img/pets/pets-katrine.webp" type="image/webp"><img class="slider__img" src="img/pets/pets-katrine.jpg?_v=1679236628244" alt="pets katrine"></picture>
 								<figcaption>
 									<p class="slider__name">katrine</p>
 									<a href="#" class="slider__button  button  button--outline">Learn more</a>
 								</figcaption>
 							</figure>
 							<figure class="slider__slide">
-								<picture><source srcset="img/pets/pets-jennifer.webp" type="image/webp"><img class="slider__img" src="img/pets/pets-jennifer.jpg?_v=1679233135009" alt="pets jennifer"></picture>
+								<picture><source srcset="img/pets/pets-jennifer.webp" type="image/webp"><img class="slider__img" src="img/pets/pets-jennifer.jpg?_v=1679236628244" alt="pets jennifer"></picture>
 								<figcaption>
 									<p class="slider__name">jennifer</p>
 									<a href="#" class="slider__button  button  button--outline">Learn more</a>
 								</figcaption>
 							</figure>
 							<figure class="slider__slide">
-								<picture><source srcset="img/pets/pets-woody.webp" type="image/webp"><img class="slider__img" src="img/pets/pets-woody.jpg?_v=1679233135009" alt="pets woody"></picture>
+								<picture><source srcset="img/pets/pets-woody.webp" type="image/webp"><img class="slider__img" src="img/pets/pets-woody.jpg?_v=1679236628244" alt="pets woody"></picture>
 								<figcaption>
 									<p class="slider__name">woody</p>
 									<a href="#" class="slider__button  button  button--outline">Learn more</a>
@@ -95,7 +95,7 @@
 					<a class="our-friends__button  button" href="pets.html">Get to know the rest</a>
 				</div>
 			</section>
-			<section class="help">
+			<section class="help" id="help">
 				<div class="help__container">
 					<h2 class="help__title  title">How you can help our shelter</h2>
 					<ul class="help__list">
@@ -117,7 +117,7 @@
 					<div class="donation__inner">
 						<h2 class="donation__title  title">You can also make a donation</h2>
 						<p class="donation__text">Name of the bank / Type of bank account</p>
-						<p class="donation__credit-card">8380 2880 8028 8791 7435</p>
+						<p class="donation__credit-card"><a href="#">8380 2880 8028 8791 7435</a></p>
 						<p class="donation__info">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit.
 							Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et
 							vulputate.
@@ -126,24 +126,29 @@
 				</div>
 			</section>
 		</main>
-		<footer class="footer">
+		<footer class="footer" id="contacts">
 			<div class="footer__container">
 				<div class="footer__inner">
 					<h3 class="footer__title">For questions and suggestions</h3>
 					<ul class="footer__list">
-						<li class="footer__item  footer__item--email"><a href="#" class="footer__link">email@shelter.com</a>
+						<li class="footer__item  footer__item--email">
+							<a href="mailto:#" class="footer__link">email@shelter.com</a>
 						</li>
-						<li class="footer__item  footer__item--phone"><a href="#" class="footer__link">+13 674 567 75 54</a>
+						<li class="footer__item  footer__item--phone">
+							<a href="tel:#" class="footer__link">+13 674 567 75 54</a>
 						</li>
 					</ul>
 				</div>
 				<div class="footer__inner">
 					<h3 class="footer__title">We are waiting for your visit</h3>
 					<ul class="footer__list">
-						<li class="footer__item  footer__item--pin"><a href="#" class="footer__link">1 Central Street, Boston
-								(entrance from the
-								store)</a></li>
-						<li class="footer__item  footer__item--pin"><a href="#" class="footer__link">18 South Park, London</a>
+						<li class="footer__item  footer__item--pin">
+							<a href="https://goo.gl/maps/YjdRrh6RNUPSoQsv7" class="footer__link" target="_blank">1 Central
+								Street, Boston (entrance from the store)</a>
+						</li>
+						<li class="footer__item  footer__item--pin">
+							<a href="https://goo.gl/maps/YjdRrh6RNUPSoQsv7" class="footer__link" target="_blank">18 South Park,
+								London</a>
 						</li>
 					</ul>
 				</div>
@@ -163,7 +168,7 @@
 </div>
  -->
 
-	<script src="js/app.min.js?_v=20230319163855"></script>
+	<script src="js/app.min.js?_v=20230319173708"></script>
 </body>
 
 </html>
