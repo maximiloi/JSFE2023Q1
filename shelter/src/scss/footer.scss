@@ -1,0 +1,92 @@
+.footer {
+
+    // .footer__container
+
+    &__container {
+        display: flex;
+
+        margin-top: 2.5rem;
+
+        background: url('@img/desktop/footer-puppy.png') no-repeat calc(100% - 40px) 100%;
+    }
+
+    // .footer__inner
+
+    &__inner {
+        min-height: 310px;
+
+        &:nth-child(2) {
+            margin-left: 160px;
+            max-width: 295px;
+
+            & .footer__title {
+                margin-bottom: 33px;
+            }
+
+            & .footer__item {
+                margin-bottom: 31px;
+            }
+        }
+    }
+
+    // .footer__title
+
+    &__title {
+        font-size: 2.1875rem;
+        line-height: 2.8125rem;
+        letter-spacing: 0.06em;
+        color: $whiteColor;
+
+        max-width: 17.5rem;
+        margin-top: .9375rem;
+        margin-bottom: 42px;
+    }
+
+    // .footer__list
+
+    &__list {}
+
+    // .footer__item
+
+    &__item {
+        margin-bottom: 38px;
+    }
+
+    // .footer__link
+
+    &__link {
+        display: flex;
+        align-items: center;
+
+        font-size: 1.25rem;
+        line-height: 1.4375rem;
+        letter-spacing: 0.06em;
+        color: $primaryColor;
+
+        transition: color 0.3s ease 0s;
+
+        & span {
+            height: 32px;
+
+            & svg {
+                fill: $primaryColor;
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $infoColor;
+
+                & span svg {
+                    fill: $infoColor;
+                }
+            }
+        }
+    }
+
+    // .footer__text
+
+    &__text {
+        margin-left: 20px;
+    }
+}

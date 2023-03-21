@@ -1,0 +1,44 @@
+.not-only {
+    // .not-only__container
+
+    &__container {
+        background: url('@img/desktop/puppy.png') no-repeat calc(50% + 250px) 100%;
+
+        padding-top: 14.0625rem;
+        padding-bottom: 16.125rem;
+    }
+
+    // .not-only__wrapper
+
+    &__wrapper {}
+
+    // .not-only__title
+
+    &__title {
+        font-family: $georgiaFontFamily;
+        font-size: 2.75rem;
+        line-height: 3.5625rem;
+        color: $whiteColor;
+
+        max-width: 19.375rem;
+    }
+
+    // .not-only__text
+
+    &__text {
+        font-family: $arialFontFamily;
+        font-size: .9375rem;
+        line-height: 1.5rem;
+        color: $greyColor;
+
+        margin: 2.5rem 0 3.5625rem 0;
+
+        max-width: 28.75rem;
+    }
+
+    // .not-only__button
+
+    &__button {
+        padding: 17px 2.8125rem;
+    }
+}
