@@ -23,14 +23,15 @@
         font-family: $arialFontFamily;
         font-size: .9375rem;
         line-height: 160%;
-        color: #CDCDCD;
+        color: $greyColor;
         padding-bottom: 2px;
 
-        transition: border-bottom 0.2s ease;
+        transition: color 0.3s ease;
 
         @media (any-hover: hover) {
             &:hover {
-                border-bottom: solid 3px $primaryColor;
+                color: $bgColorSlide;
+                // border-bottom: solid 3px $primaryColor;
             }
         }
 
@@ -44,6 +45,16 @@
                 &:hover {
                     color: $buttonColor;
                 }
+            }
+        }
+
+        &._active {
+            cursor: default;
+            color: $bgColorSlide;
+            border-bottom: solid 3px $primaryColor;
+
+            .pets & {
+                color: $buttonColor;
             }
         }
     }

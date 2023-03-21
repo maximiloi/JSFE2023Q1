@@ -46,8 +46,6 @@
     // .donation__credit-card
 
     &__credit-card {
-        position: relative;
-
         font-size: 1.25rem;
         line-height: 1.4375rem;
         letter-spacing: 0.06em;
@@ -55,22 +53,27 @@
 
         max-width: 21.875rem;
         width: 100%;
-        padding: 10px 15px 10px 60px;
-        background: #F1CDB3;
+        padding: 10px 15px;
+        background: $primaryColor;
         border-radius: 9px;
 
         margin-bottom: 1.25rem;
 
-        &:before {
-            position: absolute;
-            left: 15px;
+        & a {
+            display: flex;
+            align-content: center;
 
-            content: '';
-            display: block;
-            background: url('@img/icons/donation-credit-card.svg');
-            width: 30px;
-            height: 23px;
+            transition: color 0.3s ease 0s;
 
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $buttonColor;
+                }
+            }
+        }
+
+        & svg {
+            margin-right: 15px;
         }
     }
 
