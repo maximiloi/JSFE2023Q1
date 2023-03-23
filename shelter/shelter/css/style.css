@@ -827,7 +827,7 @@ h6 {
   margin-bottom: 30px;
 }
 .help__item--pet-food:before {
-  content: url("../img/icons/icons.svg#help-bowls-and-cups");
+  content: url("../img/icons/icons.svg#help-pet-food");
 }
 .help__item--transportation:before {
   content: url("../img/icons/icons.svg#help-transportation");
