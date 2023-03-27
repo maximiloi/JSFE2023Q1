@@ -8,12 +8,10 @@
 	&__container {
 		display: flex;
 		justify-content: space-between;
-		margin-top: 3.75rem;
+		margin-top: 30px;
+		padding-bottom: 30px;
 
-		.pets & {
-			margin-top: 1.875rem;
-			padding-bottom: 30px;
-		}
+		.pets & {}
 	}
 
 	// .header__logo
