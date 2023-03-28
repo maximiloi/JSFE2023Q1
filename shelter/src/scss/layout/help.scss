@@ -24,6 +24,10 @@
          gap: 55px 120px;
 
          margin-top: 3.75rem;
+
+         @media (max-width:$tablet) {
+             gap: 55px 60px;
+         }
      }
 
      // .help__item
@@ -38,6 +42,10 @@
          text-align: center;
          letter-spacing: 0.06em;
          color: $titleColor;
+
+         @media (max-width:$tablet) {
+             width: 170px;
+         }
 
          &:before {
              width: 60px;

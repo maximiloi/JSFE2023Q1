@@ -6,6 +6,10 @@
     &__container {
         padding-top: 5rem;
         padding-bottom: 6.25rem;
+
+        @media (max-width:$tablet) {
+            padding-bottom: 76px;
+        }
     }
 
     // .friends__title
@@ -15,6 +19,10 @@
         text-align: center;
         margin: 0 auto;
         margin-bottom: 3.75rem;
+
+        @media (max-width:$tablet) {
+            margin-bottom: 30px;
+        }
     }
 
     // .friends__catalog
@@ -25,6 +33,12 @@
         gap: 30px 40px;
 
         margin-bottom: 60px;
+
+        @media (max-width:$tablet) {
+            justify-content: center;
+
+            margin-bottom: 40px;
+        }
     }
 
     // .friends__pets
@@ -49,6 +63,15 @@
                     background-color: $primaryColorHover;
                     border: 2px solid $primaryColorHover;
                 }
+            }
+        }
+
+        @media (max-width:$tablet) {
+
+            &:nth-child(7),
+            &:nth-child(8),
+            &:nth-child(9) {
+                display: none;
             }
         }
     }

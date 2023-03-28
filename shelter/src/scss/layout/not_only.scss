@@ -5,12 +5,25 @@
         background: url('@img/desktop/puppy.png') no-repeat calc(50% + 250px) 100%;
 
         padding-top: 14.0625rem;
-        padding-bottom: 16.125rem;
+        padding-bottom: 240px;
+
+        @media (max-width:$tablet) {
+            background-size: 569px 593px;
+            background-position: calc(100% - 30px) 100%;
+
+            padding-top: 30px;
+            padding-bottom: 693px;
+        }
     }
 
     // .not-only__wrapper
 
-    &__wrapper {}
+    &__wrapper {
+        @media (max-width:$tablet) {
+            width: 28.75rem;
+            margin: 0 auto;
+        }
+    }
 
     // .not-only__title
 
@@ -31,7 +44,7 @@
         line-height: 1.5rem;
         color: $greyColor;
 
-        margin: 2.5rem 0 3.5625rem 0;
+        margin: 40px 0;
 
         max-width: 28.75rem;
     }
@@ -39,6 +52,12 @@
     // .not-only__button
 
     &__button {
-        padding: 17px 2.8125rem;
+        display: block;
+        width: 208px;
+        padding: 17px 45px;
+
+        @media (max-width:$tablet) {
+            margin: 0 auto;
+        }
     }
 }

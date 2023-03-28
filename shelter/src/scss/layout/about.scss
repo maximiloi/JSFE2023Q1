@@ -5,22 +5,31 @@
 
     &__container {
         display: flex;
+        justify-content: flex-end;
 
         padding-top: 5rem;
         padding-bottom: 6.25rem;
+
+        background: url('@img/desktop/about-pets.jpg') no-repeat calc(25% - 30px) calc(50% - 10px);
+
+        @media (max-width:$tablet) {
+            flex-direction: column;
+            align-items: center;
+
+            padding-top: 65px;
+            padding-bottom: 575px;
+
+            background-position: 50% calc(100% - 100px);
+        }
     }
 
     // .about__inner
 
-    &__inner {
+    &__wrapper {
         width: 50%;
 
-        &:first-child {
-            background: url('@img/desktop/about-pets.jpg') no-repeat calc(50% + 25px) center;
-        }
-
-        &:last-child {
-            margin-left: -5px;
+        @media (max-width:$tablet) {
+            width: 60%;
         }
     }
 

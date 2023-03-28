@@ -8,6 +8,15 @@
         margin-top: 2.5rem;
 
         background: url('@img/desktop/footer-puppy.png') no-repeat calc(100% - 40px) 100%;
+
+        @media (max-width:$tablet) {
+            justify-content: center;
+
+            background-position: 50% 100%;
+
+            margin-top: 15px;
+            padding-bottom: 310px;
+        }
     }
 
     // .footer__inner
@@ -25,6 +34,10 @@
 
             & .footer__item {
                 margin-bottom: 31px;
+            }
+
+            @media (max-width:$tablet) {
+                margin-left: 60px;
             }
         }
     }
