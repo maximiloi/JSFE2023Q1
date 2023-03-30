@@ -14,13 +14,20 @@
             padding-top: 30px;
             padding-bottom: 693px;
         }
+
+        @media (max-width:$mobile) {
+            background-size: 260px 272px;
+            background-position: calc(100% - 10px) 100%;
+
+            padding-bottom: 375px;
+        }
     }
 
     // .not-only__wrapper
 
     &__wrapper {
         @media (max-width:$tablet) {
-            width: 28.75rem;
+            max-width: 28.75rem;
             margin: 0 auto;
         }
     }
@@ -31,9 +38,20 @@
         font-family: $georgiaFontFamily;
         font-size: 2.75rem;
         line-height: 3.5625rem;
+        letter-spacing: 0;
         color: $whiteColor;
 
         max-width: 19.375rem;
+
+        @media (max-width:$mobile) {
+            max-width: 200px;
+            margin: 0 auto;
+
+            font-size: 25px;
+            line-height: 32px;
+            text-align: center;
+            letter-spacing: 0.06em;
+        }
     }
 
     // .not-only__text
@@ -47,6 +65,20 @@
         margin: 40px 0;
 
         max-width: 28.75rem;
+
+        @media (max-width:$mobile) {
+            margin-top: 42px;
+
+            text-align: center;
+
+        }
+
+        @media (max-width:$mobileSmall) {
+            .not-only__container & {
+                width: 292px;
+                margin-left: -6px;
+            }
+        }
     }
 
     // .not-only__button

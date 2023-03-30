@@ -4,6 +4,10 @@
     margin-top: 3.75rem;
     margin-bottom: 60px;
 
+    @media (max-width:$mobile) {
+        margin: 42px 0;
+    }
+
     // .slider__wrapper
 
     &__wrapper {
@@ -54,6 +58,12 @@
                 display: none;
             }
         }
+
+        @media (max-width:$mobile) {
+            &:nth-child(2) {
+                display: none;
+            }
+        }
     }
 
 
@@ -84,6 +94,13 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+
+        @media (max-width:750px) {
+            position: relative;
+            margin-top: 20px;
+
+            justify-content: space-around;
+        }
 
     }
 
