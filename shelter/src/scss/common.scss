@@ -36,4 +36,14 @@
     line-height: 2.8125rem;
     letter-spacing: 0.06em;
     color: $titleColor;
+
+    @media (max-width:$tablet) {
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    @media (max-width:$mobile) {
+        font-size: 25px;
+        line-height: 32px;
+    }
 }

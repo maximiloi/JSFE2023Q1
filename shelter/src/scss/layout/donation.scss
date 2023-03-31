@@ -5,24 +5,43 @@
 
     &__container {
         display: flex;
+        justify-content: flex-end;
 
         padding-top: 5rem;
         padding-bottom: 6.25rem;
+
+        background: url('@img/desktop/donation-dog.jpg') no-repeat calc(25% - 10px) calc(50% - 10px);
+
+        @media (max-width:$tablet) {
+            justify-content: center;
+
+            padding-bottom: 420px;
+
+            background-position: 50% calc(100% - 100px);
+        }
+
+        @media (max-width:$mobile) {
+            padding-top: 42px;
+            padding-bottom: 220px;
+
+            background-size: 260px 135.2px;
+            background-position: 50% calc(100% - 42px);
+        }
     }
 
     // .donation__inner
 
-    &__inner {
+    &__wrapper {
+        width: 45%;
+        padding-left: 20px;
 
-
-        &:first-child {
-            width: 55%;
-            background: url('@img/desktop/donation-dog.jpg') no-repeat calc(50% + 65px) center;
+        @media (max-width:$tablet) {
+            width: 54%;
+            padding-left: 0;
         }
 
-        &:last-child {
-            width: 45%;
-            padding-left: 20px;
+        @media (max-width:$mobile) {
+            width: 100%;
         }
     }
 
@@ -31,6 +50,13 @@
     &__title {
         max-width: 18.75rem;
         margin-bottom: 1.25rem;
+
+        @media (max-width:$mobile) {
+            max-width: 225px;
+            margin: 0 auto;
+            margin-bottom: 24px;
+            text-align: center;
+        }
     }
 
     // .donation__text
@@ -40,7 +66,15 @@
         line-height: 1.0625rem;
         letter-spacing: 0.06em;
         color: $titleColor;
+
         margin-bottom: 1.25rem;
+
+        @media (max-width:$mobile) {
+            letter-spacing: 0;
+            text-align: center;
+
+            margin-bottom: 22px;
+        }
     }
 
     // .donation__credit-card
@@ -61,7 +95,6 @@
 
         & a {
             display: flex;
-            align-content: center;
 
             transition: color 0.3s ease 0s;
 
@@ -75,6 +108,13 @@
         & svg {
             margin-right: 15px;
         }
+
+        @media (max-width:$mobile) {
+            font-size: 15px;
+
+            margin: 0 auto 20px auto;
+            padding: 10px 14px;
+        }
     }
 
     // .donation__info
@@ -87,6 +127,11 @@
         color: $infoColor;
 
         max-width: 23.75rem;
+
+        @media (max-width:$mobile) {
+            margin: 0 auto;
+            text-align: justify;
+        }
     }
 }
 

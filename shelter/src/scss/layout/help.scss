@@ -5,6 +5,10 @@
      &__container {
          padding-top: 5rem;
          padding-bottom: 6.25rem;
+
+         @media (max-width:$mobile) {
+             padding: 42px 15px;
+         }
      }
 
      // .help__title
@@ -13,6 +17,10 @@
          text-align: center;
          max-width: 19.375rem;
          margin: 0 auto;
+
+         @media (max-width:$mobile) {
+             max-width: 256px;
+         }
      }
 
      // .help__list
@@ -24,6 +32,16 @@
          gap: 55px 120px;
 
          margin-top: 3.75rem;
+
+         @media (max-width:$tablet) {
+             gap: 55px 60px;
+         }
+
+         @media (max-width:$mobile) {
+             gap: 30px;
+
+             margin-top: 42px;
+         }
      }
 
      // .help__item
@@ -39,10 +57,26 @@
          letter-spacing: 0.06em;
          color: $titleColor;
 
+         @media (max-width:$tablet) {
+             width: 170px;
+         }
+
+         @media (max-width:$mobile) {
+             width: 130px;
+             font-size: 15px;
+             line-height: 17px;
+         }
+
          &:before {
              width: 60px;
              height: 60px;
              margin-bottom: 30px;
+
+             @media (max-width:$mobile) {
+                 width: 50px;
+                 height: 50px;
+                 margin-bottom: 20px;
+             }
          }
 
 
