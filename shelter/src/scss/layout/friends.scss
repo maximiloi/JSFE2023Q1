@@ -10,6 +10,10 @@
         @media (max-width:$tablet) {
             padding-bottom: 76px;
         }
+
+        @media (max-width:$mobile) {
+            padding: 42px 0;
+        }
     }
 
     // .friends__title
@@ -22,6 +26,15 @@
 
         @media (max-width:$tablet) {
             margin-bottom: 30px;
+        }
+
+        @media (max-width:$mobile) {
+            font-size: 25px;
+            line-height: 32px;
+            text-align: center;
+            letter-spacing: 0.06em;
+
+            margin-bottom: 42px;
         }
     }
 
@@ -71,6 +84,15 @@
             &:nth-child(7),
             &:nth-child(8),
             &:nth-child(9) {
+                display: none;
+            }
+        }
+
+        @media (max-width:$mobile) {
+
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
                 display: none;
             }
         }

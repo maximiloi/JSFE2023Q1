@@ -23,11 +23,12 @@ import '../scss/style.scss';
 //import './libs/wNumb.min.js';
 
 // Основные модули =======================================================================================================================================
-import * as flsFunctions from './files/functions.js';
+// import * as flsFunctions from './files/functions.js';
 
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 /* (i) необходимо для корректного отображения webp из css  */
-flsFunctions.isWebp();
+// flsFunctions.isWebp();
+
 /* Добавление класса touch для HTML если браузер мобильный */
 // flsFunctions.addTouchClass();
 /* Добавление loaded для HTML после полной загрузки страницы */
@@ -67,7 +68,7 @@ flsFunctions.isWebp();
 // flsFunctions.initPopups(false);
 
 // Работа с формами =======================================================================================================================================
-import * as flsForms from './files/forms/forms.js';
+// import * as flsForms from './files/forms/forms.js';
 
 /* Работа с полями формы: добавление классов, работа с placeholder. */
 // flsForms.formFieldsInit();
@@ -136,7 +137,7 @@ import * as flsForms from './files/forms/forms.js';
 // import './files/scroll/lazyload.js';
 
 // Функции работы скроллом =======================================================================================================================================
-import * as flsScroll from './files/scroll/scroll.js';
+// import * as flsScroll from './files/scroll/scroll.js';
 
 // Наблюдатель за объектами c атрибутом data-watch
 // Документация по работе в шаблоне: js/libs/watcher.js
