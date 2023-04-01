@@ -25,30 +25,35 @@
 		align-items: center;
 		width: 52px;
 		height: 52px;
-		border: 2px solid #F1CDB3;
+		border: 2px solid $primaryColor;
 		border-radius: 50%;
 
 		transition: border 0.3s ease, background 0.3s ease;
 
 		@media (any-hover: hover) {
-			&:hover {
-				border: 2px solid #FDDCC4;
-				background: #FDDCC4;
+
+			&:not([disabled]):hover {
+				border: 2px solid $primaryColorHover;
+				background: $primaryColorHover;
 			}
+
+			// &:hover {
+			// 	border: 2px solid $primaryColorHover;
+			// 	background: $primaryColorHover;
+			// }
 		}
 
 		&._active {
 			cursor: default;
-			border: 2px solid #F1CDB3;
-			background: #F1CDB3;
+			border: 2px solid $primaryColor;
+			background: $primaryColor;
 		}
 
-		&._disable {
+		&:disabled {
 			cursor: default;
 			background: transparent;
-			border: 2px solid #CDCDCD;
-			color: #CDCDCD;
-
+			border: 2px solid $greyColor;
+			color: $greyColor;
 		}
 	}
 
@@ -76,29 +81,35 @@
 		align-items: center;
 		width: 52px;
 		height: 52px;
-		border: 2px solid #F1CDB3;
+		border: 2px solid $primaryColor;
 		border-radius: 50%;
 
 		transition: border 0.3s ease, background 0.3s ease;
 
 		@media (any-hover: hover) {
 			&:hover {
-				border: 2px solid #FDDCC4;
-				background: #FDDCC4;
+				border: 2px solid $primaryColorHover;
+				background: $primaryColorHover;
 			}
 		}
 
 		&._active {
 			cursor: default;
-			border: 2px solid #F1CDB3;
-			background: #F1CDB3;
+			border: 2px solid $primaryColor;
+			background: $primaryColor;
 		}
 
 		&._disable {
 			cursor: default;
 			background: transparent;
-			border: 2px solid #CDCDCD;
-			color: #CDCDCD;
+			border: 2px solid $greyColor;
+			color: $greyColor;
+
+			@media (any-hover: hover) {
+				&:hover {
+					background: transparent;
+				}
+			}
 		}
 	}
 }

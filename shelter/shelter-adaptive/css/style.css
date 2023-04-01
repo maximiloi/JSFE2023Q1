@@ -920,7 +920,7 @@ h6 {
   max-width: 61.875rem;
   margin: 0 auto;
 }
-@media (max-width: 1179px) {
+@media (max-width: 73.6875rem) {
   .slider__wrapper {
     column-gap: 40px;
   }
@@ -972,7 +972,7 @@ h6 {
   display: flex;
   justify-content: space-between;
 }
-@media (max-width: 750px) {
+@media (max-width: 46.875rem) {
   .slider__nav {
     position: relative;
     margin-top: 20px;
@@ -988,17 +988,13 @@ h6 {
 }
 @media (any-hover: hover) {
   .slider__nav-button:hover {
+    cursor: pointer;
     border: 2px solid #FDDCC4;
+    background-color: #FDDCC4;
   }
 }
 .slider__nav-button--prev, .slider__nav-button--next {
   background: url("../img/icons/slider-arrow.svg") no-repeat 50% 50%/14px 6px;
-  transition: background-color 0.3s ease;
-}
-@media (any-hover: hover) {
-  .slider__nav-button--prev:hover, .slider__nav-button--next:hover {
-    background-color: #FDDCC4;
-  }
 }
 .slider__nav-button--next {
   transform: rotate(180deg);
@@ -1341,7 +1337,7 @@ h6 {
   transition: border 0.3s ease, background 0.3s ease;
 }
 @media (any-hover: hover) {
-  .pagging__arrow:hover {
+  .pagging__arrow:not([disabled]):hover {
     border: 2px solid #FDDCC4;
     background: #FDDCC4;
   }
@@ -1351,7 +1347,7 @@ h6 {
   border: 2px solid #F1CDB3;
   background: #F1CDB3;
 }
-.pagging__arrow._disable {
+.pagging__arrow:disabled {
   cursor: default;
   background: transparent;
   border: 2px solid #CDCDCD;
@@ -1391,6 +1387,11 @@ h6 {
   background: transparent;
   border: 2px solid #CDCDCD;
   color: #CDCDCD;
+}
+@media (any-hover: hover) {
+  .pagging__item._disable:hover {
+    background: transparent;
+  }
 }
 
 .footer__container {
@@ -1501,14 +1502,14 @@ h6 {
     fill: #B2B2B2;
   }
 }
+@media (max-width: 20.3125rem) {
+  .footer__link--pin.footer__link {
+    justify-content: flex-start;
+  }
+}
 @media (max-width: 43.74875em) {
   .footer__link {
     justify-content: center;
-  }
-}
-@media (max-width: 325px) {
-  .footer__link--pin {
-    justify-content: flex-start;
   }
 }
 .footer__text {
