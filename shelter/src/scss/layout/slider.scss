@@ -22,7 +22,7 @@
         max-width: 61.875rem;
         margin: 0 auto;
 
-        @media (max-width: 1179px) {
+        @media (max-width: 73.6875rem) {
             column-gap: 40px;
         }
     }
@@ -95,7 +95,7 @@
         display: flex;
         justify-content: space-between;
 
-        @media (max-width:750px) {
+        @media (max-width: 46.875rem) {
             position: relative;
             margin-top: 20px;
 
@@ -109,13 +109,17 @@
     &__nav-button {
         width: 52px;
         height: 52px;
+
         border: 2px solid $primaryColor;
         border-radius: 50%;
+
         transition: background-color 0.3s ease;
 
         @media (any-hover: hover) {
             &:hover {
+                cursor: pointer;
                 border: 2px solid $primaryColorHover;
+                background-color: $primaryColorHover;
             }
         }
     }
@@ -123,13 +127,6 @@
     &__nav-button--prev,
     &__nav-button--next {
         background: url('@img/icons/slider-arrow.svg') no-repeat 50% 50% / 14px 6px;
-        transition: background-color 0.3s ease;
-
-        @media (any-hover: hover) {
-            &:hover {
-                background-color: $primaryColorHover;
-            }
-        }
     }
 
     // .slider__nav--prev
