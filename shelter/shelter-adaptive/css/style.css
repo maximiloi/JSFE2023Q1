@@ -468,7 +468,7 @@ h6 {
     padding-right: 30px;
   }
 }
-@media (max-width: 43.74875em) {
+@media (max-width: 47.99875em) {
   [class*=__container] {
     padding-left: 20px;
     padding-right: 20px;
@@ -546,7 +546,7 @@ h6 {
   margin-top: 30px;
   padding-bottom: 30px;
 }
-@media (max-width: 43.74875em) {
+@media (max-width: 47.99875em) {
   .header__container {
     align-items: center;
   }
@@ -585,7 +585,7 @@ h6 {
   display: flex;
   align-items: center;
 }
-@media (max-width: 43.74875em) {
+@media (max-width: 47.99875em) {
   .nav__list {
     position: absolute;
     top: -49px;
@@ -605,7 +605,7 @@ h6 {
 .nav__item:not(:last-child) {
   margin-right: 2.25rem;
 }
-@media (max-width: 43.74875em) {
+@media (max-width: 47.99875em) {
   .nav__item:not(:last-child) {
     margin-right: 0;
   }
@@ -626,7 +626,7 @@ h6 {
     color: #FAFAFA;
   }
 }
-@media (max-width: 43.74875em) {
+@media (max-width: 47.99875em) {
   .nav__link {
     font-size: 32px;
     line-height: 51px;
@@ -641,7 +641,7 @@ h6 {
     color: #292929;
   }
 }
-@media (max-width: 43.74875em) {
+@media (max-width: 47.99875em) {
   .pets .nav__link {
     color: #CDCDCD;
   }
@@ -654,7 +654,7 @@ h6 {
 .pets .nav__link._active {
   color: #292929;
 }
-@media (max-width: 43.74875em) {
+@media (max-width: 47.99875em) {
   .pets .nav__link._active {
     color: #FAFAFA;
   }
@@ -662,7 +662,7 @@ h6 {
 .nav__burger {
   display: none;
 }
-@media (max-width: 43.74875em) {
+@media (max-width: 47.99875em) {
   .nav__burger {
     display: block;
     position: relative;
@@ -681,7 +681,7 @@ h6 {
     background-color: #F1CDB3;
   }
 }
-@media (max-width: 43.74875em) and (max-width: 43.74875em) {
+@media (max-width: 47.99875em) and (max-width: 47.99875em) {
   .pets .nav__burger span, .pets .nav__burger::before, .pets .nav__burger::after {
     background-color: #000;
   }
@@ -690,22 +690,22 @@ h6 {
     background-color: #F1CDB3;
   }
 }
-@media (max-width: 43.74875em) {
+@media (max-width: 47.99875em) {
   .nav__burger::before {
     top: 0px;
   }
 }
-@media (max-width: 43.74875em) {
+@media (max-width: 47.99875em) {
   .nav__burger::after {
     bottom: 0px;
   }
 }
-@media (max-width: 43.74875em) {
+@media (max-width: 47.99875em) {
   .nav__burger span {
     top: calc(50% - 1px);
   }
 }
-@media (max-width: 43.74875em) {
+@media (max-width: 47.99875em) {
   ._open-nav .nav__burger {
     transform: rotate(90deg);
     left: -3px;
@@ -1514,4 +1514,9 @@ h6 {
 }
 .footer__text {
   margin-left: 20px;
+}
+@media (max-width: 43.74875em) {
+  .footer__text--mobile {
+    width: 258px;
+  }
 }

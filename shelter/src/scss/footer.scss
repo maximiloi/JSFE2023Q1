@@ -155,5 +155,11 @@
 
     &__text {
         margin-left: 20px;
+
+        @media (max-width:$mobile) {
+            &--mobile {
+                width: 258px;
+            }
+        }
     }
 }
