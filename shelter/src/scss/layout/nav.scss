@@ -7,7 +7,7 @@
         display: flex;
         align-items: center;
 
-        @media (max-width:$mobile) {
+        @media (max-width:$burger) {
             // display: none;
             position: absolute;
             top: -49px;
@@ -39,7 +39,7 @@
         &:not(:last-child) {
             margin-right: 2.25rem;
 
-            @media (max-width:$mobile) {
+            @media (max-width:$burger) {
                 margin-right: 0;
 
                 &:not(:last-child) {
@@ -66,7 +66,7 @@
             }
         }
 
-        @media (max-width:$mobile) {
+        @media (max-width:$burger) {
             font-size: 32px;
             line-height: 51px;
         }
@@ -82,7 +82,7 @@
                 }
             }
 
-            @media (max-width:$mobile) {
+            @media (max-width:$burger) {
                 color: $greyColor;
             }
         }
@@ -95,7 +95,7 @@
             .pets & {
                 color: $buttonColor;
 
-                @media (max-width:$mobile) {
+                @media (max-width:$burger) {
                     color: $bgColorSlide;
                 }
             }
@@ -105,7 +105,7 @@
     &__burger {
         display: none;
 
-        @media (max-width: $mobile) {
+        @media (max-width: $burger) {
             display: block;
             position: relative;
             width: 30px;
@@ -126,7 +126,7 @@
                 background-color: $primaryColor;
 
 
-                @media (max-width:$mobile) {
+                @media (max-width:$burger) {
                     .pets & {
                         background-color: $mainColor;
 
