@@ -920,7 +920,7 @@ h6 {
   max-width: 61.875rem;
   margin: 0 auto;
 }
-@media (max-width: 73.6875rem) {
+@media (max-width: 73.6875em) {
   .slider__wrapper {
     column-gap: 40px;
   }
@@ -972,7 +972,7 @@ h6 {
   display: flex;
   justify-content: space-between;
 }
-@media (max-width: 46.875rem) {
+@media (max-width: 46.875em) {
   .slider__nav {
     position: relative;
     margin-top: 20px;
@@ -1437,7 +1437,7 @@ h6 {
     margin-bottom: 40px;
   }
 }
-@media (max-width: 1179px) {
+@media (max-width: 73.6875em) {
   .footer__inner:nth-child(2) {
     margin-left: 60px;
   }
@@ -1502,7 +1502,7 @@ h6 {
     fill: #B2B2B2;
   }
 }
-@media (max-width: 20.3125rem) {
+@media (max-width: 20.3125em) {
   .footer__link--pin.footer__link {
     justify-content: flex-start;
   }
