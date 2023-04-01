@@ -22,9 +22,11 @@
         max-width: 61.875rem;
         margin: 0 auto;
 
-        @media (max-width: 73.6875rem) {
+        @media (max-width: em(1179)) {
+
             column-gap: 40px;
         }
+
     }
 
     // .slider__slide
@@ -95,7 +97,7 @@
         display: flex;
         justify-content: space-between;
 
-        @media (max-width: 46.875rem) {
+        @media (max-width: em(750)) {
             position: relative;
             margin-top: 20px;
 

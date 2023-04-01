@@ -52,7 +52,7 @@
                 }
             }
 
-            @media (max-width: 1179px) {
+            @media (max-width: em(1179)) {
                 margin-left: 60px;
             }
 
@@ -140,7 +140,7 @@
         }
 
         &--pin.footer__link {
-            @media (max-width: 20.3125rem) {
+            @media (max-width: em(325)) {
                 justify-content: flex-start;
             }
         }
