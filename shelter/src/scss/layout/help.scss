@@ -1,5 +1,6 @@
  .help {
      background: $whiteColor;
+
      // .help__container
 
      &__container {
@@ -42,6 +43,10 @@
 
              margin-top: 42px;
          }
+
+         @media (max-width: em(325)) {
+             justify-content: flex-start;
+         }
      }
 
      // .help__item
@@ -78,7 +83,6 @@
                  margin-bottom: 20px;
              }
          }
-
 
          // .help__item--pet-food
 
