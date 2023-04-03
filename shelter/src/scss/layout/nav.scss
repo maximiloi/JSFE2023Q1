@@ -10,6 +10,7 @@
         @media (max-width:$burger) {
             // display: none;
             position: absolute;
+            z-index: 5;
             top: -49px;
             left: 270px;
 
@@ -111,7 +112,7 @@
             width: 30px;
             height: 22px;
             cursor: pointer;
-            z-index: 5;
+            z-index: 10;
 
             transition: all 0.3s ease 0s;
 
