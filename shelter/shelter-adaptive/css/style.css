@@ -2,14 +2,14 @@
 @font-face {
   font-family: Arial;
   font-display: swap;
-  src: url("../fonts/Arial.woff2") format("woff2"), url("../fonts/Arial.woff") format("woff");
+  src: local("Arial"), url("../fonts/Arial.woff2") format("woff2"), url("../fonts/Arial.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: Georgia;
   font-display: swap;
-  src: url("../fonts/Georgia.woff2") format("woff2"), url("../fonts/Georgia.woff") format("woff");
+  src: local("Georgia"), url("../fonts/Georgia.woff2") format("woff2"), url("../fonts/Georgia.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -1042,6 +1042,11 @@ h6 {
   .help__list {
     gap: 30px;
     margin-top: 42px;
+  }
+}
+@media (max-width: 20.3125em) {
+  .help__list {
+    justify-content: flex-start;
   }
 }
 .help__item {
