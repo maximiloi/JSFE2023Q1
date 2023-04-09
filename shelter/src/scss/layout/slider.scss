@@ -11,34 +11,54 @@
     // .slider__wrapper
 
     &__wrapper {
-        position: relative;
-        z-index: 2;
+        // position: relative;
+        // z-index: 2;
 
+        // display: flex;
+        // justify-content: flex-start;
+
+        max-width: calc((270px * 3) + (90px * 2) + 100px);
+        margin: 0 auto;
+
+        overflow: hidden;
+
+        @media (max-width: em(1179)) {
+            max-width: calc((270px * 2) + (40px * 1) + 80px);
+        }
+
+    }
+
+    &__inner {
         display: flex;
-        justify-content: center;
+        padding: 50px;
 
         column-gap: 90px;
 
-        max-width: 61.875rem;
-        margin: 0 auto;
+        position: relative;
+        left: 0;
+
+        transition: transform 0.5s ease 0s;
+
 
         @media (max-width: em(1179)) {
-
             column-gap: 40px;
         }
-
     }
 
     // .slider__slide
 
     &__slide {
+        position: relative;
+        z-index: 3;
+
         display: flex;
         flex-direction: column;
         align-items: center;
 
         background-color: $bgColorSlide;
         border-radius: 9px;
-        overflow: hidden;
+
+        // overflow: hidden;
 
         transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
@@ -55,23 +75,26 @@
             }
         }
 
-        @media (max-width:$tablet) {
-            &:nth-child(3) {
-                display: none;
-            }
-        }
+        // @media (max-width:$tablet) {
+        //     &:nth-child(3) {
+        //         display: none;
+        //     }
+        // }
 
-        @media (max-width:$mobile) {
-            &:nth-child(2) {
-                display: none;
-            }
-        }
+        // @media (max-width:$mobile) {
+        //     &:nth-child(2) {
+        //         display: none;
+        //     }
+        // }
     }
 
 
     // .slider__img
 
-    &__img {}
+    &__img {
+        border-top-right-radius: 9px;
+        border-top-left-radius: 9px;
+    }
 
     // .slider__name
 
@@ -97,7 +120,7 @@
         display: flex;
         justify-content: space-between;
 
-        @media (max-width: em(750)) {
+        @media (max-width: em(1076)) {
             position: relative;
             margin-top: 20px;
 

@@ -76,7 +76,7 @@ body {
 	flex-direction: column;
 	overflow: hidden;
 
-	background: url('@img/desktop/noise_transparent.png'),
+	background: url('@img/bg/bg_noise_transparent.png'),
 		radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 	// margin-top: -7.5rem;
 
@@ -183,6 +183,7 @@ body {
 @import "layout/friends";
 @import "layout/pagging";
 @import "footer";
+@import "layout/modal-pets";
 
 // Подключение стилей отдельных страниц
 @import "home";

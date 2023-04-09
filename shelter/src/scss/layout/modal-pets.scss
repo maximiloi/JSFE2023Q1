@@ -1,0 +1,190 @@
+.modal-pets {
+
+    // .modal-pets__wrapper
+
+    &__wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // height: 100vh;
+
+        overflow: hidden;
+
+        letter-spacing: 0.06em;
+
+        visibility: hidden;
+
+        &._active {
+            visibility: visible;
+        }
+    }
+
+    // .modal-pets__content
+
+    &__content {
+        position: relative;
+
+        max-width: 900px;
+        margin: 50px;
+
+        background: #FAFAFA;
+        border-radius: 9px;
+
+        @media (max-width:$mobile) {
+            margin: 40px;
+        }
+    }
+
+    // .modal-pets__button
+
+    &__button {
+        position: absolute;
+        right: -42px;
+        top: -52px;
+
+        width: 52px;
+        height: 52px;
+        padding: 0;
+
+        content: '';
+        background-image: url('@img/icons/close.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-color: transparent;
+
+        @media (max-width:$mobile) {
+            right: -32px;
+        }
+
+    }
+
+    // .modal-pets__inner
+
+    &__inner {
+        display: flex;
+
+    }
+
+    // .modal-pets__img
+
+    &__img {
+        border-top-left-radius: 9px;
+        border-bottom-left-radius: 9px;
+
+        // object-fit: cover;
+
+        @media (max-width:$tablet) {
+            width: 350px;
+            height: 350px;
+        }
+
+        @media (max-width:$mobile) {
+            display: none;
+        }
+    }
+
+    //.modal-pets__box
+    &__box {
+        margin-left: 30px;
+        margin-right: 20px;
+
+        @media (max-width:$tablet) {
+            margin-left: 11px;
+            margin-right: 9px;
+        }
+    }
+
+
+    // .modal-pets__name
+
+    &__name {
+        font-size: 35px;
+        line-height: 45px;
+
+        margin-top: 50px;
+        margin-bottom: 10px;
+
+        @media (max-width:$tablet) {
+            margin-top: 10px;
+        }
+    }
+
+    // .modal-pets__info
+
+    &__info {
+        font-size: 20px;
+        line-height: 23px;
+
+        margin-bottom: 40px;
+
+        @media (max-width:$tablet) {
+            margin-bottom: 20px;
+        }
+    }
+
+    // .modal-pets__type
+
+    &__type {}
+
+    // .modal-pets__breed
+
+    &__breed {}
+
+    // .modal-pets__description
+
+    &__description {
+        margin-bottom: 40px;
+
+        @media (max-width:$tablet) {
+            margin-bottom: 20px;
+        }
+    }
+
+    // .modal-pets__list
+
+    &__list {}
+
+    // .modal-pets__item
+
+    &__item {
+        list-style: inside;
+        list-style-type: disc;
+
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 17px;
+
+        margin-bottom: 10px;
+
+        &::marker {
+            color: $primaryColor;
+        }
+
+        & span {
+            font-weight: 400;
+        }
+    }
+
+    // .modal-pets__age
+
+    &__age {}
+
+    // .modal-pets__inoculations
+
+    &__inoculations {}
+
+    // .modal-pets__diseases
+
+    &__diseases {}
+
+    // .modal-pets__parasites
+
+    &__parasites {}
+}
