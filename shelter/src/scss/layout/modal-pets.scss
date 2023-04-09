@@ -31,9 +31,15 @@
     &__content {
         position: relative;
 
-        width: 900px;
+        max-width: 900px;
+        margin: 50px;
+
         background: #FAFAFA;
         border-radius: 9px;
+
+        @media (max-width:$mobile) {
+            margin: 40px;
+        }
     }
 
     // .modal-pets__button
@@ -53,6 +59,10 @@
         background-position: 50% 50%;
         background-color: transparent;
 
+        @media (max-width:$mobile) {
+            right: -32px;
+        }
+
     }
 
     // .modal-pets__inner
@@ -67,12 +77,28 @@
     &__img {
         border-top-left-radius: 9px;
         border-bottom-left-radius: 9px;
+
+        // object-fit: cover;
+
+        @media (max-width:$tablet) {
+            width: 350px;
+            height: 350px;
+        }
+
+        @media (max-width:$mobile) {
+            display: none;
+        }
     }
 
     //.modal-pets__box
     &__box {
         margin-left: 30px;
         margin-right: 20px;
+
+        @media (max-width:$tablet) {
+            margin-left: 11px;
+            margin-right: 9px;
+        }
     }
 
 
@@ -84,6 +110,10 @@
 
         margin-top: 50px;
         margin-bottom: 10px;
+
+        @media (max-width:$tablet) {
+            margin-top: 10px;
+        }
     }
 
     // .modal-pets__info
@@ -93,6 +123,10 @@
         line-height: 23px;
 
         margin-bottom: 40px;
+
+        @media (max-width:$tablet) {
+            margin-bottom: 20px;
+        }
     }
 
     // .modal-pets__type
@@ -107,6 +141,10 @@
 
     &__description {
         margin-bottom: 40px;
+
+        @media (max-width:$tablet) {
+            margin-bottom: 20px;
+        }
     }
 
     // .modal-pets__list
