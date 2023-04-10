@@ -169,5 +169,5 @@ import './files/generateFriends.js';
 import './files/generateCard.js';
 import './files/script.js';
 //
-// import './files/self-check.js';
+import './files/self-check.js';
 //======================================================================================================================================
