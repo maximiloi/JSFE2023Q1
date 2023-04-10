@@ -944,6 +944,16 @@ body._layout {
     max-width: 660px;
   }
 }
+@media (max-width: 41.25em) {
+  .slider__wrapper {
+    max-width: 350px;
+  }
+}
+@media (max-width: 24.375em) {
+  .slider__wrapper {
+    max-width: 270px;
+  }
+}
 .slider__inner {
   display: flex;
   padding: 50px;
@@ -955,6 +965,15 @@ body._layout {
 @media (max-width: 73.6875em) {
   .slider__inner {
     column-gap: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 24.375em) {
+  .slider__inner {
+    column-gap: 40px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 .slider__slide {

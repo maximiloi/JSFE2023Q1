@@ -26,6 +26,14 @@
             max-width: calc((270px * 2) + (40px * 1) + 80px);
         }
 
+        @media (max-width: em(660)) {
+            max-width: calc((270px * 1) + 80px);
+        }
+
+        @media (max-width: em(390)) {
+            max-width: calc((270px * 1));
+        }
+
     }
 
     &__inner {
@@ -42,7 +50,16 @@
 
         @media (max-width: em(1179)) {
             column-gap: 40px;
+            padding-left: 40px;
+            padding-right: 40px;
         }
+
+        @media (max-width: em(390)) {
+            column-gap: 40px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
     }
 
     // .slider__slide

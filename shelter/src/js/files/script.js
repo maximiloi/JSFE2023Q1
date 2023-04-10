@@ -36,13 +36,13 @@ const documentActions = e => {
 
     // Работа с карточками животных
 
-    // Показываем модкльное окно нажатое на собаку
+    // Показываем модальное окно нажатое на карточку
     if (targetElem.closest('.slider__slide')) {
         let namePets = targetElem.closest('.slider__slide').dataset.petsName;
 
         modalElements.forEach(element => {
             if (element.dataset.petsName === namePets) {
-                document.body.classList.toggle('_layout');
+                document.body.classList.add('_layout');
                 element.classList.add('_active');
             }
         });
