@@ -1,0 +1,41 @@
+.app {
+  background-color: $bg-color;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__inner {
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    background-color: $bg-wrapper;
+  }
+
+  &__bomb {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: $bg-wrapper;
+
+  &:hover {
+    background-color: $bg-bomb-hover;
+  }
+}
+
+.border {
+  border: 6px solid;
+  border-color: #FFFFFF #757475 #757475 #FFFFFF;
+  box-sizing: border-box;
+}
