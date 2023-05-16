@@ -1,4 +1,4 @@
-import squares from './variables';
+import { squares } from './variables';
 
 function startGame(width, bombAmount) {
   const bombsArray = Array(bombAmount).fill('bomb');

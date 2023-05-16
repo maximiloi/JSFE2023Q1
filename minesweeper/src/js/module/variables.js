@@ -1,3 +1,5 @@
 const squares = [];
+const widthBoard = 10;
 
-export default squares;
+export { squares };
+export { widthBoard };
