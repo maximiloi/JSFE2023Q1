@@ -2,7 +2,7 @@ import createPage from './module/createPage';
 import createBoard from './module/createBoard';
 import startGame from './module/startGame';
 import addNumber from './module/addNumber';
-import clickElement from './module/clickElement';
+import clickElement from './module/clickSquare';
 import { squares, widthBoard } from './module/variables';
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -1,7 +1,7 @@
 import checkSquare from './checkSquare';
 import { isGameOver } from './variables';
 
-function clickElement(square) {
+function clickSquare(square) {
   if (isGameOver) return;
   if (square.classList.contains('checked') || square.classList.contains('flag')) return;
   if (square.classList.contains('bomb')) {
@@ -18,4 +18,4 @@ function clickElement(square) {
   square.classList.add('checked');
 }
 
-export default clickElement;
+export default clickSquare;
