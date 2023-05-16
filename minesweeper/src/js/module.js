@@ -1,8 +1,9 @@
 import createPage from './module/createPage';
 import createBoard from './module/createBoard';
 import startGame from './module/startGame';
-import { squares, widthBoard } from './module/variables';
 import addNumber from './module/addNumber';
+import clickElement from './module/clickElement';
+import { squares, widthBoard } from './module/variables';
 
 document.addEventListener('DOMContentLoaded', () => {
   createPage();
@@ -16,6 +17,10 @@ document.addEventListener('click', (event) => {
     if (squares.length === 0) {
       startGame(widthBoard, widthBoard);
       addNumber(squares, widthBoard);
+    }
+
+    if (targetElement.closest('.square')) {
+      clickElement(targetElement);
     }
   }
 });

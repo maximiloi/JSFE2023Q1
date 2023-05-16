@@ -24,10 +24,16 @@
 }
 
 .square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 40px;
   height: 40px;
   cursor: pointer;
   background-color: $bg-wrapper;
+
+  line-height: 1;
 
   &:hover {
     background-color: $bg-bomb-hover;
@@ -35,6 +41,10 @@
 
   &.bomb {
     background-color: red;
+  }
+
+  &.checked {
+    background-color: orange;
   }
 }
 
