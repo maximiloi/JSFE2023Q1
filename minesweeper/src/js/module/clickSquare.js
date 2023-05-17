@@ -1,11 +1,12 @@
 import checkSquare from './checkSquare';
+import gameOver from './gameOver';
 import { isGameOver } from './variables';
 
 function clickSquare(square) {
   if (isGameOver) return;
   if (square.classList.contains('checked') || square.classList.contains('flag')) return;
   if (square.classList.contains('bomb')) {
-    console.log('bomb');
+    gameOver(square);
   } else {
     const total = square.getAttribute('data');
     if (parseInt(total, 10) !== 0) {

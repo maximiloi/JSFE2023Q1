@@ -7,9 +7,9 @@ function startGame(width, bombAmount) {
   const shuffleArray = gameArray.sort(() => Math.random() - 0.5);
 
   const squareElements = document.querySelectorAll('.square');
-  squareElements.forEach((square, index) => {
-    square.classList.add(shuffleArray[index]);
-    squares.push(square);
+  squareElements.forEach((squareElement, index) => {
+    squareElement.classList.add(shuffleArray[index]);
+    squares.push(squareElement);
   });
 }
 

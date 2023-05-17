@@ -28,7 +28,7 @@ function checkSquare(square) {
       const newSquare = document.getElementById(newId);
       clickSquare(newSquare);
     }
-    if (curentId < (widthBoard * widthBoard - 2) && !isRightEdge) {
+    if (curentId < (widthBoard * widthBoard - 1) && !isRightEdge) {
       const newId = squares[parseInt(curentId, 10) + 1].id;
       const newSquare = document.getElementById(newId);
       clickSquare(newSquare);
@@ -43,7 +43,7 @@ function checkSquare(square) {
       const newSquare = document.getElementById(newId);
       clickSquare(newSquare);
     }
-    if (curentId < (widthBoard * widthBoard - widthBoard - 1) && !isRightEdge) {
+    if (curentId < (widthBoard * widthBoard - widthBoard - 1)) {
       const newId = squares[parseInt(curentId, 10) + widthBoard].id;
       const newSquare = document.getElementById(newId);
       clickSquare(newSquare);
