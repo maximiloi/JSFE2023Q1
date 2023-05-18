@@ -2,6 +2,7 @@ import createPage from './module/createPage';
 import createBoard from './module/createBoard';
 import startGame from './module/startGame';
 import addNumber from './module/addNumber';
+import addFlag from './module/addFlag';
 import clickElement from './module/clickSquare';
 import { squares, widthBoard } from './module/variables';
 
@@ -23,4 +24,11 @@ document.addEventListener('click', (event) => {
       clickElement(targetElement);
     }
   }
+});
+
+document.addEventListener('contextmenu', (event) => {
+  const targetElement = event.target;
+
+  event.preventDefault();
+  addFlag(targetElement);
 });

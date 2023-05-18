@@ -2,7 +2,8 @@ import { isGameOver } from './variables';
 
 function gameOver() {
   console.log('BOOM! Game Over');
-  // isGameOver = true; // todo
+  isGameOver = true; // todo
+  console.log('isGameOver: ', isGameOver);
 
   const squaresElements = document.querySelectorAll('.square');
   squaresElements.forEach((squareElement) => {
