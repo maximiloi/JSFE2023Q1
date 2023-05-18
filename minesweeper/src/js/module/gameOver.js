@@ -1,8 +1,8 @@
 import { isGameOver } from './variables';
 
-function gameOver() {
+const gameOver = () => {
   console.log('BOOM! Game Over');
-  isGameOver = true; // todo
+  // isGameOver = true; // todo
 
   const squaresElements = document.querySelectorAll('.square');
   squaresElements.forEach((squareElement) => {
@@ -12,6 +12,6 @@ function gameOver() {
       squareElement.classList.add('open');
     }
   });
-}
+};
 
 export default gameOver;

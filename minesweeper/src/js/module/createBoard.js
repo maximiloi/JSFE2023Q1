@@ -1,6 +1,6 @@
 import createElement from '../utils/createElement.js';
 
-function createBoard(widthBoard) {
+const createBoard = (widthBoard) => {
   const boardWrapper = document.querySelector('.board');
 
   for (let i = 0; i < widthBoard * widthBoard; i += 1) {
@@ -10,6 +10,6 @@ function createBoard(widthBoard) {
     boardWrapper.style.height = `${40 * widthBoard}px`;
     boardWrapper.appendChild(square);
   }
-}
+};
 
 export default createBoard;

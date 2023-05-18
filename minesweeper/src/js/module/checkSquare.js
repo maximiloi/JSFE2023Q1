@@ -1,7 +1,7 @@
 import clickSquare from './clickSquare';
 import { widthBoard } from './variables';
 
-function checkSquare(square) {
+const checkSquare = (square) => {
   const curentId = square.id;
   const isLeftEdge = (curentId % widthBoard === 0);
   const isRightEdge = (curentId % widthBoard === widthBoard - 1);
@@ -49,6 +49,6 @@ function checkSquare(square) {
       clickSquare(newSquare);
     }
   }, 20);
-}
+};
 
 export default checkSquare;

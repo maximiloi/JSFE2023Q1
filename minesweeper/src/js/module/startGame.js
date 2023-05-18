@@ -1,6 +1,6 @@
 import { squares } from './variables';
 
-function startGame(width, bombAmount) {
+const startGame = (width, bombAmount) => {
   const bombsArray = Array(bombAmount).fill('bomb');
   const emptyArray = Array(width * width - bombAmount).fill('empty');
   const gameArray = emptyArray.concat(bombsArray);
@@ -11,6 +11,6 @@ function startGame(width, bombAmount) {
     squareElement.classList.add(shuffleArray[index]);
     squares.push(squareElement);
   });
-}
+};
 
 export default startGame;

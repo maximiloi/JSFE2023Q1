@@ -1,10 +1,10 @@
-function addNumber(squares, widthBoard) {
+const addNumber = (squares, widthBoard) => {
   for (let i = 0; i < squares.length; i += 1) {
     let total = 0;
     const isLeftEdge = (i % widthBoard === 0);
     const isRightEdge = (i % widthBoard === widthBoard - 1);
 
-    if (squares[i].classList.contains('empty')) { // closest
+    if (squares[i].classList.contains('empty')) {
       if (i > widthBoard - 1 && !isLeftEdge && squares[i - (widthBoard + 1)].classList.contains('bomb')) total += 1;
       if (i > widthBoard - 1 && squares[i - widthBoard].classList.contains('bomb')) total += 1;
       if (i > widthBoard - 1 && !isRightEdge && squares[i + 1 - widthBoard].classList.contains('bomb')) total += 1;
@@ -19,6 +19,6 @@ function addNumber(squares, widthBoard) {
       squares[i].setAttribute('data', total);
     }
   }
-}
+};
 
 export default addNumber;

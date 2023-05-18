@@ -10,7 +10,7 @@ const checkWin = () => {
     }
     if (matches === bombAmount) {
       console.log('WIN!');
-      isGameOver = true;
+      // isGameOver = true;
     }
   }
 };

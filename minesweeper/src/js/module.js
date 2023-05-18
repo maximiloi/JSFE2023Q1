@@ -4,11 +4,13 @@ import startGame from './module/startGame';
 import addNumber from './module/addNumber';
 import addFlag from './module/addFlag';
 import clickElement from './module/clickSquare';
+import createModal from './module/createModal';
 import { squares, widthBoard } from './module/variables';
 
 document.addEventListener('DOMContentLoaded', () => {
   createPage();
   createBoard(widthBoard, squares);
+  // createModal();
 });
 
 document.addEventListener('click', (event) => {
