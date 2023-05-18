@@ -9,7 +9,6 @@ const addFlag = (square) => {
   if (!square.classList.contains('checked') && (flags < bombAmount)) {
     if (!square.classList.contains('flag')) {
       square.classList.add('flag');
-      square.innerHTML = '&#128681';
       flags += 1;
       checkWin();
     } else {

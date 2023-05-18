@@ -2,3 +2,11 @@ $bg-color: #c1c0c1;
 $bg-wrapper: #bfbebf;
 $text-color: #000000;
 $bg-bomb-hover: #d4d3d4;
+$grey: #757475;
+$white: #FFFFFF;
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  font-family: 'Press Start 2P', cursive;
+}

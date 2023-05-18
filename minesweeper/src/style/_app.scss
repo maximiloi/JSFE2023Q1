@@ -22,7 +22,7 @@
   display: flex;
   flex-wrap: wrap;
   border: 1px solid;
-  border-color: #FFFFFF #757475 #757475 #FFFFFF;
+  border-color: $white $grey $grey $white;
 }
 
 .square {
@@ -43,16 +43,29 @@
     background-color: $bg-bomb-hover;
   }
 
+  &.open {
+    background-image: url(./assets/bomb.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 80% 80%;
+  }
+
+  &.flag {
+    background-image: url(./assets/flag.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 80% 80%;
+  }
+
   &.open.checked {
-    // border: 1px solid #757475;
-    // width: 38px;
-    // height: 38px;
+    border: 0;
     background-color: red;
+
   }
 
   &.checked {
     border: 1px solid;
-    border-color: #FFFFFF #757475 #757475 #FFFFFF;
+    border-color: $white $grey $grey $white;
     background-color: $bg-color;
   }
 
@@ -75,6 +88,6 @@
 
 .border {
   border: 6px solid;
-  border-color: #FFFFFF #757475 #757475 #FFFFFF;
+  border-color: $white $grey $grey $white;
   box-sizing: border-box;
 }
