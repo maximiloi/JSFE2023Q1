@@ -12,6 +12,10 @@ function clickSquare(square) {
     if (parseInt(total, 10) !== 0) {
       square.classList.add('checked');
       square.innerHTML += total;
+      if (parseInt(total, 10) === 1) square.classList.add('one');
+      if (parseInt(total, 10) === 2) square.classList.add('two');
+      if (parseInt(total, 10) === 3) square.classList.add('three');
+      if (parseInt(total, 10) === 4) square.classList.add('four');
       return;
     }
     checkSquare(square);

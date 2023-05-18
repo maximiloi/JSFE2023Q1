@@ -51,7 +51,25 @@
   }
 
   &.checked {
-    background-color: orange;
+    border: 1px solid;
+    border-color: #FFFFFF #757475 #757475 #FFFFFF;
+    background-color: $bg-color;
+  }
+
+  &.one {
+    color: blue;
+  }
+
+  &.two {
+    color: green;
+  }
+
+  &.three {
+    color: red;
+  }
+
+  &.four {
+    color: #00007B;
   }
 }
 
