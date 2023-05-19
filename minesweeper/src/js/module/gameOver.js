@@ -1,8 +1,10 @@
-import { isGameOver } from './variables';
+import { stopSecondCounter } from './timer';
+import { isGameOver, seconds } from './variables';
 
 const gameOver = () => {
   console.log('BOOM! Game Over');
-  // isGameOver = true; // todo
+  stopSecondCounter();
+  isGameOver = true; // todo
 
   const squaresElements = document.querySelectorAll('.square');
   squaresElements.forEach((squareElement) => {

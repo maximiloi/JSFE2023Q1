@@ -1,15 +1,17 @@
 import createPage from './module/createPage';
+import outputNumberBombs from './module/outputNumberBombs';
+import { runSecondCounter } from './module/timer';
 import createBoard from './module/createBoard';
 import startGame from './module/startGame';
 import addNumber from './module/addNumber';
 import addFlag from './module/addFlag';
 import clickElement from './module/clickSquare';
-import createModal from './module/createModal';
-import { squares, widthBoard } from './module/variables';
+import { squares, widthBoard, bombAmount } from './module/variables';
 
 document.addEventListener('DOMContentLoaded', () => {
   createPage();
   createBoard(widthBoard, squares);
+  outputNumberBombs(bombAmount);
   // createModal();
 });
 
@@ -18,8 +20,9 @@ document.addEventListener('click', (event) => {
 
   if (targetElement.closest('.board')) {
     if (squares.length === 0) {
-      startGame(widthBoard, widthBoard);
+      startGame(widthBoard, bombAmount);
       addNumber(squares, widthBoard);
+      runSecondCounter();
     }
 
     if (targetElement.closest('.square')) {

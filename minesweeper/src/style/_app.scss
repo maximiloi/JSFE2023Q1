@@ -57,6 +57,10 @@
 
   &.flag {
     background-image: url(./assets/flag.png);
+
+    &.open {
+      background-color: green;
+    }
   }
 
   &.open.checked {

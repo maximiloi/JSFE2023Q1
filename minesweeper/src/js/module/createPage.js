@@ -10,6 +10,7 @@ const createPage = () => {
   const numberBomb = createElement('div', 'setting__wrapper number number__bomb');
   const reset = createElement('div', 'setting__wrapper reset');
   const numberTime = createElement('div', 'setting__wrapper number number__time');
+  numberTime.innerText = '000';
 
   settingWrapper.append(numberBomb, reset, numberTime);
   appWrapper.append(titleElement, settingWrapper, appInner);

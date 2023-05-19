@@ -1,4 +1,5 @@
 import checkWin from './checkWin';
+import outputNumberBombs from './outputNumberBombs';
 import { isGameOver, bombAmount } from './variables';
 
 let flags = 0;
@@ -11,10 +12,12 @@ const addFlag = (square) => {
       square.classList.add('flag');
       flags += 1;
       checkWin();
+      outputNumberBombs(bombAmount - flags);
     } else {
       square.classList.remove('flag');
       square.innerHTML = '';
       flags -= 1;
+      outputNumberBombs(bombAmount - flags);
     }
   }
 };

@@ -1,3 +1,4 @@
+import { stopSecondCounter } from './timer';
 import { bombAmount, isGameOver } from './variables';
 
 const checkWin = () => {
@@ -10,7 +11,8 @@ const checkWin = () => {
     }
     if (matches === bombAmount) {
       console.log('WIN!');
-      // isGameOver = true;
+      stopSecondCounter();
+      isGameOver = true;
     }
   }
 };
