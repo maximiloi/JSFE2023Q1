@@ -15,7 +15,6 @@ const addFlag = (square) => {
       outputNumberBombs(bombAmount - flags);
     } else {
       square.classList.remove('flag');
-      square.innerHTML = '';
       flags -= 1;
       outputNumberBombs(bombAmount - flags);
     }

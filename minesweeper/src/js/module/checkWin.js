@@ -16,9 +16,10 @@ const checkWin = () => {
     if (matches === bombAmount) {
       console.log('WIN!');
       stopSecondCounter();
+      isGameOver = true;
       createModal('win');
       winSound.play();
-      isGameOver = true;
+      return;
     }
   }
 };
