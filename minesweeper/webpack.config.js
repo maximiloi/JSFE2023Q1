@@ -75,6 +75,13 @@ module.exports = {
         },
       },
       {
+        test: /\.wav$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'sound/[name].[contenthash][ext]',
+        },
+      },
+      {
         test: /\.(jpe?g|png|webp|gif|svg)$/i,
         use: [{
           loader: 'image-webpack-loader',

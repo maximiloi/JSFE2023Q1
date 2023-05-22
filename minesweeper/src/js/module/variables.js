@@ -1,4 +1,4 @@
-const squares = [];
+let squares = [];
 const widthBoard = 10;
 const heightBoard = 10;
 const bombAmount = 10;

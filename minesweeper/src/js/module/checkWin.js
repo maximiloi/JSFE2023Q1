@@ -1,5 +1,9 @@
+import createModal from './createModal';
 import { stopSecondCounter } from './timer';
 import { bombAmount, isGameOver } from './variables';
+import audioWinSound from '../../assets/win.wav';
+
+const winSound = new Audio(audioWinSound);
 
 const checkWin = () => {
   let matches = 0;
@@ -12,6 +16,8 @@ const checkWin = () => {
     if (matches === bombAmount) {
       console.log('WIN!');
       stopSecondCounter();
+      createModal('win');
+      winSound.play();
       isGameOver = true;
     }
   }

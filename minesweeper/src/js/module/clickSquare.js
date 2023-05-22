@@ -4,6 +4,7 @@ import { isGameOver } from './variables';
 
 const clickSquare = (square) => {
   if (isGameOver) return;
+
   if (square.classList.contains('checked') || square.classList.contains('flag')) return;
   if (square.classList.contains('bomb')) {
     gameOver(square);

@@ -1,8 +1,9 @@
 let timerId;
+let seconds = 0;
 
 function runSecondCounter() {
   const timeOut = document.querySelector('.number__time');
-  let seconds = 0;
+  seconds = 0;
 
   timeOut.innerText = String(seconds).padStart(3, '0');
 
@@ -18,4 +19,8 @@ function stopSecondCounter() {
   clearInterval(timerId);
 }
 
-export { runSecondCounter, stopSecondCounter };
+function secondCounter() {
+  return seconds;
+}
+
+export { runSecondCounter, stopSecondCounter, secondCounter };

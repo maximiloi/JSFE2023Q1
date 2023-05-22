@@ -5,14 +5,17 @@ import createBoard from './module/createBoard';
 import startGame from './module/startGame';
 import addNumber from './module/addNumber';
 import addFlag from './module/addFlag';
-import clickElement from './module/clickSquare';
+import clickSquare from './module/clickSquare';
 import { squares, widthBoard, bombAmount } from './module/variables';
+import audioClickSound from '../assets/tick.wav';
+
+let clickSquareCount = 0;
+const clickSound = new Audio(audioClickSound);
 
 document.addEventListener('DOMContentLoaded', () => {
   createPage();
   createBoard(widthBoard, squares);
   outputNumberBombs(bombAmount);
-  // createModal();
 });
 
 document.addEventListener('click', (event) => {
@@ -23,11 +26,32 @@ document.addEventListener('click', (event) => {
       startGame(widthBoard, bombAmount);
       addNumber(squares, widthBoard);
       runSecondCounter();
+      clickSound.play();
     }
 
     if (targetElement.closest('.square')) {
-      clickElement(targetElement);
+      clickSquare(targetElement);
+      clickSquareCount += 1;
+      clickSound.play();
     }
+  }
+
+  // if (targetElement.closest('.sad')) {
+  //   const boardWrapper = document.querySelector('.board');
+  //   boardWrapper.innerHTML = '';
+  //   document.querySelector('.number__time').innerText = '000';
+  //   targetElement.classList.remove('sad');
+  //   // isGameOver = false;
+  //   squares = [];
+  //   clickSquareCount = 0;
+  //   createBoard(widthBoard, squares);
+  //   startGame(widthBoard, bombAmount);
+  //   addNumber(squares, widthBoard);
+  //   outputNumberBombs(bombAmount);
+  // }
+
+  if (targetElement.closest('.modal__wrapper')) {
+    targetElement.closest('.modal__wrapper').remove();
   }
 });
 
@@ -37,3 +61,7 @@ document.addEventListener('contextmenu', (event) => {
   event.preventDefault();
   addFlag(targetElement);
 });
+
+export function clickSquareCountFN() {
+  return clickSquareCount;
+};
