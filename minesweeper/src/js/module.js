@@ -30,9 +30,11 @@ document.addEventListener('click', (event) => {
     }
 
     if (targetElement.closest('.square')) {
+      const numberClick = document.querySelector('.number__click');
       clickSquare(targetElement);
       clickSquareCount += 1;
       clickSound.play();
+      numberClick.innerText = String(clickSquareCount).padStart(2, '0');
     }
   }
 

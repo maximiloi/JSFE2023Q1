@@ -7,12 +7,14 @@ const createPage = () => {
   const titleElement = createElement('h1', 'app__title', 'RSS Minesweeper');
   const appInner = createElement('div', 'app__inner board');
   const settingWrapper = createElement('div', 'app__setting setting');
+  const numberClick = createElement('div', 'number number__click');
   const numberBomb = createElement('div', 'number number__bomb');
   const reset = createElement('button', 'reset reset__button');
   const numberTime = createElement('div', 'number number__time');
+  numberClick.innerText = '00';
   numberTime.innerText = '000';
 
-  settingWrapper.append(numberBomb, reset, numberTime);
+  settingWrapper.append(numberClick, numberBomb, reset, numberTime);
   appWrapper.append(titleElement, settingWrapper, appInner);
   app.prepend(appWrapper);
 };
