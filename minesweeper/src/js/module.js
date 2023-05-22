@@ -6,7 +6,7 @@ import startGame from './module/startGame';
 import addNumber from './module/addNumber';
 import addFlag from './module/addFlag';
 import clickSquare from './module/clickSquare';
-import { squares, widthBoard, bombAmount } from './module/variables';
+import { squares, widthBoard, bombAmount, isGameOver } from './module/variables';
 import audioClickSound from '../assets/tick.wav';
 
 let clickSquareCount = 0;
@@ -26,15 +26,18 @@ document.addEventListener('click', (event) => {
       startGame(widthBoard, bombAmount);
       addNumber(squares, widthBoard);
       runSecondCounter();
+      if (isGameOver) return;
+      clickSquareCount += 1;
       clickSound.play();
     }
 
     if (targetElement.closest('.square')) {
       const numberClick = document.querySelector('.number__click');
       clickSquare(targetElement);
+      numberClick.innerText = String(clickSquareCount).padStart(2, '0');
+      if (isGameOver) return;
       clickSquareCount += 1;
       clickSound.play();
-      numberClick.innerText = String(clickSquareCount).padStart(2, '0');
     }
   }
 
