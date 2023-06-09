@@ -8,16 +8,21 @@ export interface UEndpoint {
 }
 
 export interface UResponse {
-  status: string;
   sources: UNews[];
 }
 
-type UNews = {
-  id: string,
-  name: string,
-  description: string,
-  url: string,
-  category: string,
-  language: string,
-  country: string
-};
+export interface UNews {
+  author: string;
+  content: string;
+  description: string;
+  publishedAt: string;
+  source: USource;
+  title: string;
+  url: string;
+  urlToImage: string;
+}
+
+interface USource {
+  id: string;
+  name: string;
+}
