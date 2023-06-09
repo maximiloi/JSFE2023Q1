@@ -1,4 +1,4 @@
-import { UOption, UEndpoint } from "./types";
+import { UOption, UEndpoint } from "../../types/index";
 
 class Loader {
   public baseLink: string;
