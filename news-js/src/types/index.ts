@@ -32,3 +32,19 @@ interface USource {
   id: string;
   name: string;
 }
+
+export interface UArticles {
+  articles: UNews[];
+  status: string;
+  totalResults: number;
+}
+
+export interface USources {
+  status: string;
+  sources: UNewsCompany[];
+}
+
+export enum EResStatus {
+  'unauthorized' = 401,
+  'notFound' = 404,
+}

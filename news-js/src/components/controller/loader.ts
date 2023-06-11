@@ -1,4 +1,4 @@
-import { UOption, UEndpoint } from '../../types/index';
+import { UOption, UEndpoint, EResStatus } from '../../types/index';
 
 class Loader {
   public baseLink: string;
@@ -21,7 +21,7 @@ class Loader {
 
   public errorHandler = (res: Response): Response => {
     if (!res.ok) {
-      if (res.status === 401 || res.status === 404)
+      if (res.status === EResStatus.unauthorized || res.status === EResStatus.notFound)
         console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
       throw Error(res.statusText);
     }
@@ -40,12 +40,12 @@ class Loader {
     return url.slice(0, -1);
   }
 
-  public load(method: string, endpoint: string, callback: (data: number) => void, options: UOption = {}): void {
+  public load(method: string, endpoint: string, callback: (data: Response) => void, options: UOption = {}): void {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
-      .then((res): Promise[] => res.json())
-      .then((data): void => callback(data))
-      .catch((err): void => console.error(err));
+      .then((res): Promise<Response> => res.json())
+      .then((data: Response): void => callback(data))
+      .catch((err: string): void => console.error(err));
   }
 }
 
