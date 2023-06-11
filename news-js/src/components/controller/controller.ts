@@ -1,12 +1,12 @@
-import { UNews, USources } from '../../types/index';
+import { UArticles, USources } from '../../types/index';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
-  public getSources(callback: (data?: USources) => void): void {
+  public getSources(callback?: (data?: USources) => void): void {
     super.getResp({ endpoint: 'sources' }, callback);
   }
 
-  public getNews(e: Event, callback: (data?: UNews) => void): void {
+  public getNews(e: Event, callback?: (data?: UArticles) => void): void {
     let target: HTMLElement = e.target as HTMLElement;
     const newsContainer: HTMLElement = e.currentTarget as HTMLElement;
 
