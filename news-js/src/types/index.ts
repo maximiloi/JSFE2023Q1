@@ -4,7 +4,7 @@ export interface UOption {
 
 export interface UEndpoint {
   endpoint: string;
-  options: UOption;
+  options?: UOption;
 }
 
 export interface UNewsCompany {
