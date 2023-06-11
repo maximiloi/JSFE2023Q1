@@ -19,7 +19,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: 'tsconfig.eslint.json',
   },
-  plugins: ['prettier', '@typescript-eslint'],
+  plugins: ['prettier', 'import', '@typescript-eslint'],
   root: true,
   rules: {
     'import/extensions': 'off',
