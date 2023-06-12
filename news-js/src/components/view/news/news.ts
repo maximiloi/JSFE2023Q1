@@ -1,6 +1,8 @@
 import './news.css';
 import { UNews } from '../../../types/index';
 
+// import newsPlasholderImg from '../../../assets/news_placeholder.jpg';
+
 class News {
   public draw = (data: UNews[]): void => {
     const news: UNews[] = data.length >= 10 ? data.filter((_item, idx): boolean => idx < 10) : data;
@@ -17,7 +19,7 @@ class News {
 
       const metaPhotoEl: Element | null = newsClone.querySelector('.news__meta-photo');
       if (metaPhotoEl instanceof HTMLElement) {
-        metaPhotoEl.style.backgroundImage = `url(${item.urlToImage || 'img/news_placeholder.jpg'})`;
+        metaPhotoEl.style.backgroundImage = `url(${item.urlToImage || '../../../assets/news_placeholder.jpg'})`;
       }
 
       const metaAuthorEl: Element | null = newsClone.querySelector('.news__meta-author');
