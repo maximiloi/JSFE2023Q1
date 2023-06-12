@@ -38,3 +38,10 @@ footer .copyright a:hover {
 footer .copyright:before {
     content: '©';
 }
+
+@media (max-width: 640px) {
+    footer {
+        height: auto;
+        flex-direction: column;
+    }
+}
