@@ -19,7 +19,9 @@ class News {
 
       const metaPhotoEl: Element | null = newsClone.querySelector('.news__meta-photo');
       if (metaPhotoEl instanceof HTMLElement) {
-        metaPhotoEl.style.backgroundImage = `url(${item.urlToImage || 'https://clipground.com/images/no-image-png-5.jpg'})`;
+        metaPhotoEl.style.backgroundImage = `url(
+          ${item.urlToImage || 'https://clipground.com/images/no-image-png-5.jpg'}
+          )`;
       }
 
       const metaAuthorEl: Element | null = newsClone.querySelector('.news__meta-author');
