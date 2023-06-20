@@ -30,7 +30,7 @@ const config = {
     rules: [
       { test: /\.(ts?)$/i, loader: 'ts-loader' },
       { test: /\.scss$/i, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'] },
-      { test: /\.(png)$/i, type: 'asset' },
+      { test: /\.(png|jpg|svg)$/i, type: 'asset/resource' },
     ],
   },
   resolve: { extensions: ['.ts', '.json', '.scss', '.html', '...'] },
