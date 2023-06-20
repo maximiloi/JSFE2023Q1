@@ -20,7 +20,6 @@ const config = {
     new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash].css' }),
     new HTMLWebpackPlugin({
       template: resolve('src', 'template'),
-      title: 'CSS Diner | iloi',
       chunks: ['main'],
       inject: true,
       hash: false,
