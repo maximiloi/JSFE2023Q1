@@ -1,8 +1,6 @@
 import createHeader from './components/Header/index';
+import createFooter from './components/Footer/index';
 import './styles.scss';
 
-const body: HTMLElement | null = document.querySelector('body');
-
-if (body) {
-  createHeader(body);
-};
+createHeader('body');
+createFooter('.app');
