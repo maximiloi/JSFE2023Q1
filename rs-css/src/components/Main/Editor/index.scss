@@ -1,4 +1,10 @@
 .editor {
   border: solid 10px rgba(0, 0, 0, .35);
   border-radius: 4px;
+
+  display: flex;
+
+  &-pane {
+    width: 50%;
+  }
 }
