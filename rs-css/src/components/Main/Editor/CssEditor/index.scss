@@ -1,0 +1,44 @@
+.editor {
+  &-pane {
+    &__title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 10px 15px;
+      background: rgba(0, 0, 0, .15);
+      border-top: solid 1px rgba(255, 255, 255, .05);
+      border-bottom: solid 1px rgba(255, 255, 255, .05);
+      border-radius: 2px 2px 0 0;
+      color: rgba(255, 255, 255, .6);
+    }
+
+    &__file-name {
+      margin: 0;
+    }
+
+    &__file {
+      display: flex;
+    }
+
+    &__number {
+      color: #999;
+      background: #DDD;
+      padding: 10px;
+      text-align: right;
+    }
+
+    &__input {
+      width: 100%;
+      padding: 10px;
+      background: #efefef;
+      color: #AAA;
+    }
+
+    &__input--answer {
+      width: calc(100% - 10px);
+      background: transparent;
+      border: none;
+    }
+  }
+}
