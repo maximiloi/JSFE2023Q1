@@ -5,7 +5,7 @@ import './index.scss';
 import logoImg from '../../public/favicon.png'
 
 function createHeader(parentClassName: string): void {
-  const headerElem: HTMLElement = createElement('section', 'app__header header');
+  const headerElem: HTMLElement = createElement('header', 'app__header header');
   const headerLogoElem: HTMLImageElement = createElement('img', 'header__logo') as HTMLImageElement;
   headerLogoElem.alt = 'logo images';
   headerLogoElem.src = logoImg as string;

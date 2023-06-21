@@ -6,7 +6,7 @@ import rssLogo from '../../assets/rsschool_logo.png'
 import githubLogo from '../../assets/github_logo.png'
 
 function createFooter(parentClassName: string): void {
-  const footerElem: HTMLElement = createElement('section', 'app__footer footer');
+  const footerElem: HTMLElement = createElement('footer', 'app__footer footer');
 
   const footerRSSLinkElem: HTMLAnchorElement = createElement('a', 'footer__link') as HTMLAnchorElement;
   footerRSSLinkElem.href = 'https://rs.school/js/' as string;
