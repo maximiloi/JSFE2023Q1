@@ -1,3 +1,4 @@
+import addToParentElement from '../../utils/addToParentElement';
 import createElement from '../../utils/createElement';
 import './index.scss';
 
@@ -12,10 +13,7 @@ function createHeader(parentClassName: string): void {
 
   headerElem.append(headerLogoElem, headerTitleElem);
 
-  const parentElement: HTMLElement | null = document.querySelector(parentClassName);
-  if (parentElement) {
-    parentElement.append(headerElem);
-  };
+  addToParentElement(parentClassName, headerElem);
 }
 
 export default createHeader;

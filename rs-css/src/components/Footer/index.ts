@@ -1,3 +1,4 @@
+import addToParentElement from '../../utils/addToParentElement';
 import createElement from '../../utils/createElement';
 import './index.scss';
 
@@ -23,10 +24,7 @@ function createFooter(parentClassName: string): void {
   const footerImgGithub: HTMLImageElement = createElement('img', 'footer__img footer__github') as HTMLImageElement;
   footerImgGithub.src = githubLogo as string;
 
-  const parentElement: HTMLElement | null = document.querySelector(parentClassName);
-  if (parentElement) {
-    parentElement.append(footerElem);
-  };
+  addToParentElement(parentClassName, footerElem);
 
   footerRSSLinkElem.append(footerImgRSSchool);
   footerGithubLinkElem.append(footerImgGithub)
