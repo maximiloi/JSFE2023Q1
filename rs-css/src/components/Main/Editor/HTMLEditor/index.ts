@@ -15,7 +15,7 @@ function createHTMLEditor(parentClassName: string): void {
   addToParentElement('.html-version__title', editorNameElem);
 
   const editorHTMLFileNameElem: HTMLElement = createElement('span', 'editor-pane__file-name');
-  editorHTMLFileNameElem.textContent = 'style.css'
+  editorHTMLFileNameElem.textContent = 'table.html'
   addToParentElement('.html-version__title', editorHTMLFileNameElem);
 
   const editorHTMLFileElem: HTMLElement = createElement('div', 'editor-pane__file html-view');
