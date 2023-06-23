@@ -1,5 +1,23 @@
 .game {
-  &__wrapper {
-    height: 35vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 30px 0;
+
+  &__table {
+    height: 30vh;
+    width: 81%;
+    background: rgba(0, 0, 0, 0.3);
+    border: solid 10px rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+    padding: 0 15px;
+  }
+
+  &__level {
+    width: 10%;
+    height: 30vh;
+    background: rgba(0, 0, 0, 0.3);
+    border: solid 10px rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+    padding: 0 15px;
   }
 }
