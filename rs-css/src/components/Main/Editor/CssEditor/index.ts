@@ -38,8 +38,7 @@ function createCssEditor(parentClassName: string): void {
   addToParentElement('.editor-pane__input', editorCssInputFieldElem);
 
   const editorCssInpuTextElem: HTMLElement = createElement('div', 'editor-pane__input--text');
-  editorCssInpuTextElem.innerHTML = `{<br>/* Styles would go here. */<br>}<br><br>
-  /*<br>Type a number to skip to a level.<br>Ex → "5" for level 5<br>*/`;
+  editorCssInpuTextElem.innerHTML = `{<br>/* Styles would go here. */<br>}`;
   addToParentElement('.editor-pane__input', editorCssInpuTextElem);
 }
 
