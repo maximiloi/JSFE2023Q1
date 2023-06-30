@@ -1,19 +1,16 @@
 import { LEVELS } from "../Levels/Levels";
 
-function renderLevel(level: string | null): void {
+function RenderLevel(level: string | null): void {
 
   if (!level) return;
   const levelNumber = Number(level);
-  console.log('levelNumber: ', levelNumber);
 
   const levelNameArr: NodeListOf<Element> = document.querySelectorAll('.level__name');
-  levelNameArr.forEach((levelName, levelIndex) => {
-    if (levelNumber === levelIndex) {
-      levelName.classList.add('active');
-    }
-  });
+  levelNameArr.forEach((levelElem): void => {
+    levelElem.classList.remove('active');
+  })
+  levelNameArr[levelNumber].classList.add('active');
 
-  // game__title
   const gameTitleElem: Element | null = document.querySelector('.game__title');
   if (!gameTitleElem) return;
   gameTitleElem.innerHTML = LEVELS[levelNumber].doThis;
@@ -23,4 +20,4 @@ function renderLevel(level: string | null): void {
   htmlOutputElem.textContent = LEVELS[levelNumber].boardMarkup;
 }
 
-export default renderLevel;
+export default RenderLevel;
