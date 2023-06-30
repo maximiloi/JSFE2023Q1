@@ -10,6 +10,8 @@ function createGameWrapper(parentClassName: string): void {
 
   const gameTableElem: HTMLElement = createElement('div', 'game__table');
   addToParentElement('.game', gameTableElem);
+  const gameTableTitleElem: HTMLElement = createElement('h3', 'game__title');
+  addToParentElement('.game__table', gameTableTitleElem);
 
   const gameLevelElem: HTMLElement = createElement('div', 'game__level level');
   addToParentElement('.game', gameLevelElem);

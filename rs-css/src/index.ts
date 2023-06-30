@@ -8,7 +8,6 @@ import createFooter from './components/Footer/index';
 import checkLocalStorage from './components/localStorage';
 
 const appElem: HTMLElement = createElement('div', 'app');
-
 addToParentElement('body', appElem);
 
 createHeader('.app');
