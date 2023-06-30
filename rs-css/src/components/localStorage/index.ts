@@ -1,14 +1,16 @@
-import Storage from "../../utils/Storage";
+import renderLevel from "../renderLevel";
 
 function checkLocalStorage(): void {
-  console.log('tokens: ', Storage.get('1'));
-  //   if (Storage.get('css-dinner-current')) {
-  //     console.log('Storage.get(css-dinner): ', Storage.get('css-dinner-current'));
-  //   } else {
-  //     Storage.set('css-dinner-current', '1');
-  //   }
-  //   console.log();
+  let currentLevel: string | null;
+
+  if (localStorage.getItem('current-level')) {
+    currentLevel = localStorage.getItem('current-level');
+  } else {
+    localStorage.setItem('current-level', '0');
+    currentLevel = '0';
+  }
+
+  renderLevel(currentLevel);
 }
 
 export default checkLocalStorage;
-
