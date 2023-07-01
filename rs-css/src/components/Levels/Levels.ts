@@ -90,7 +90,7 @@ export const LEVELS: ULevels[] = [
     ],
     boardMarkup: `
     <bento>
-    <orange/>
+      <orange/>
     </bento>
     <plate id="fancy">
       <pickle/>
@@ -204,7 +204,7 @@ export const LEVELS: ULevels[] = [
     boardMarkup: `
     <apple/>
     <plate>
-      <orange class="small" />
+      <orange class="small"/>
     </plate>
     <bento/>
     <bento>
