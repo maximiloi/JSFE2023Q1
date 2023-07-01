@@ -1,8 +1,9 @@
 import hljs from 'highlight.js/lib/common';
 import 'highlight.js/scss/atom-one-dark.scss';
 import { LEVELS } from '../Levels/Levels';
+import renderTable from '../renderTable';
 
-function RenderLevel(level: string | null): void {
+function renderLevel(level: string | null): void {
 
   if (!level) return;
   const levelNumber = Number(level);
@@ -20,11 +21,15 @@ function RenderLevel(level: string | null): void {
   const htmlOutputCodeElem: Element | null = document.querySelector('.language-html');
   if (!htmlOutputCodeElem) return;
 
+  const levelCode: string = LEVELS[levelNumber].boardMarkup;
+
   const code = `<div class="table">
-${LEVELS[levelNumber].boardMarkup}
+${levelCode}
 </div>`
   const highlightedCode: string = hljs.highlightAuto(code).value
   htmlOutputCodeElem.innerHTML = highlightedCode;
+
+  renderTable(levelCode);
 }
 
-export default RenderLevel;
+export default renderLevel;

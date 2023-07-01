@@ -1,4 +1,4 @@
-import RenderLevel from "../RenderLevel";
+import RenderLevel from "../renderLevel";
 
 function checkLocalStorage(): void {
   let currentLevel: string | null;

@@ -1,4 +1,4 @@
-import RenderLevel from "../components/RenderLevel";
+import renderLevel from "../components/renderLevel";
 
 function clickHandler(): void {
   const levelNameArr: NodeListOf<Element> = document.querySelectorAll('.level__name');
@@ -7,7 +7,7 @@ function clickHandler(): void {
 
     levelElem.addEventListener('click', (): void => {
       localStorage.setItem('current-level', levelIndex.toString());
-      RenderLevel(levelIndex.toString());
+      renderLevel(levelIndex.toString());
     });
   });
 }
