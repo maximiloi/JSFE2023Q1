@@ -32,8 +32,10 @@ function createHTMLEditor(parentClassName: string): void {
   const editorHTMLInputElem: HTMLElement = createElement('div', 'editor-pane__input html__output');
   addToParentElement('.html-view', editorHTMLInputElem);
 
-  const editorHTMLInpuTextElem: HTMLElement = createElement('div', 'editor-pane__input--text');
-  addToParentElement('.html__output', editorHTMLInpuTextElem);
+  const editorHTMLCodeElem: HTMLElement = createElement('pre', 'code');
+  addToParentElement('.html__output', editorHTMLCodeElem);
+  const editorHTMLLanguageHtmlElem: HTMLElement = createElement('div', 'language-html');
+  addToParentElement('.code', editorHTMLLanguageHtmlElem);
 }
 
 export default createHTMLEditor;
