@@ -72,7 +72,7 @@ function renderTable(LevelCode: string): void {
       default:
         {
           const elemTemp: string = elem.replaceAll('<', '').replaceAll('/>', '').replaceAll('>', '');
-          const elemHTML: HTMLElement = createElement(`${elemTemp}`, 'strobe');
+          const elemHTML: HTMLElement = createElement(`${elemTemp}`);
           tableSurfaceElem.append(elemHTML);
         }
         break;

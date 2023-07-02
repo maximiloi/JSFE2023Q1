@@ -30,6 +30,16 @@ ${levelCode}
   htmlOutputCodeElem.innerHTML = highlightedCode;
 
   renderTable(levelCode);
+
+  const strobeElement: string = LEVELS[levelNumber].selector;
+  const tableArea: Element | null = document.querySelector('.table__area');
+  if (!tableArea) return;
+  const elementsStrobe: NodeListOf<Element> | null = tableArea.querySelectorAll(strobeElement);
+  if (!elementsStrobe) return;
+  elementsStrobe.forEach((element): void => {
+    element.classList.add('strobe');
+  });
+
 }
 
 export default renderLevel;
