@@ -15,12 +15,10 @@ function renderTable(LevelCode: string): void {
 
   codeArr.forEach((elem): void => {
     switch (true) {
-      case elem.includes('id'):
-        console.log('elem id: ', elem);
+      case elem.includes('id') && !elem.includes('  '):
         {
           const elemTemp: string[] = elem.replaceAll('<', '').replaceAll('/>', '').replaceAll('>', '')
             .replaceAll('id="', '').replaceAll('"', '').split(' ');
-
           const [tagName, id] = elemTemp;
           const elemHTML: HTMLElement = createElement(tagName);
           elemHTML.id = id;
@@ -28,12 +26,11 @@ function renderTable(LevelCode: string): void {
         }
         break;
 
-      case elem.includes('class'):
-        console.log('elem class: ', elem);
+      case elem.includes('class') && !elem.includes('  '):
+
         {
           const elemTemp: string[] = elem.replaceAll('<', '').replaceAll('/>', '').replaceAll('>', '')
             .replaceAll('class="', '').replaceAll('"', '').split(' ');
-
           const [tagName, className] = elemTemp;
           const elemHTML: HTMLElement = createElement(tagName);
           elemHTML.classList.add(className);
@@ -41,25 +38,41 @@ function renderTable(LevelCode: string): void {
         }
         break;
 
-      case elem.includes('  '):
-        console.log('elem space: ', elem);
+      case elem.includes('  ') && !elem.includes('class'):
         {
-          const elemTemp: string = elem.replaceAll('<', '').replaceAll('/>', '')
-          //   .replaceAll('id="', '').replaceAll('"', '').split(' ');
+          const tableArea: Element | null = document.querySelector('.table__area');
+          if (tableArea) {
+            const lastChild: Element | null = tableArea.lastElementChild;
+            if (lastChild) {
+              const elemTemp: string = elem.replaceAll('<', '').replaceAll('/>', '').replaceAll('>', '').trim();
+              const elemHTML: HTMLElement = createElement(elemTemp);
+              lastChild.append(elemHTML);
+            }
+          }
+        }
+        break;
 
-          // const [tagName, id] = elemTemp;
-          // const elemHTML: HTMLElement = createElement(tagName);
-          // elemHTML.id = id;
-          // tableSurfaceElem.append(elemHTML);
-          console.log('elemTemp: ', elemTemp);
+      case elem.includes('  ') && elem.includes('class'):
+        {
+          const tableArea: Element | null = document.querySelector('.table__area');
+          if (tableArea) {
+            const lastChild: Element | null = tableArea.lastElementChild;
+            if (lastChild) {
+              const elemTemp: string[] = elem.replaceAll('<', '').replaceAll('/>', '').replaceAll('>', '')
+                .replaceAll('class="', '').replaceAll('"', '').trim().split(' ');
+              const [tagName, className] = elemTemp;
+              const elemHTML: HTMLElement = createElement(tagName);
+              elemHTML.classList.add(className);
+              lastChild.append(elemHTML);
+            }
+          }
         }
         break;
 
       default:
-        console.log('elem default: ', elem);
         {
           const elemTemp: string = elem.replaceAll('<', '').replaceAll('/>', '').replaceAll('>', '');
-          const elemHTML: HTMLElement = createElement(`${elemTemp}`);
+          const elemHTML: HTMLElement = createElement(`${elemTemp}`, 'strobe');
           tableSurfaceElem.append(elemHTML);
         }
         break;

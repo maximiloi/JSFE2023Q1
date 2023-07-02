@@ -1,5 +1,5 @@
 import hljs from 'highlight.js/lib/common';
-import 'highlight.js/scss/atom-one-dark.scss';
+import 'highlight.js/scss/monokai-sublime.scss';
 import { LEVELS } from '../Levels/Levels';
 import renderTable from '../renderTable';
 
