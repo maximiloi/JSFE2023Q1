@@ -52,8 +52,6 @@ function createGameWrapper(parentClassName: string): void {
       }
     })
   }
-
-  console.log('completedLevels: ', completedLevels);
 }
 
 export default createGameWrapper;
