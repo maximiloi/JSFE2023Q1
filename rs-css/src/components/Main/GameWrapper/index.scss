@@ -121,8 +121,11 @@
   &__checkmark {
     content: url('../../../assets/checkmark.svg');
     filter: invert(43%) sepia(10%) saturate(171%) hue-rotate(355deg) brightness(93%) contrast(92%);
-    // filter: invert(72%) sepia(13%) saturate(7123%) hue-rotate(69deg) brightness(99%) contrast(60%);
     width: 16px;
     margin-right: 10px;
+  }
+
+  &__checkmark.check {
+    filter: invert(72%) sepia(13%) saturate(7123%) hue-rotate(69deg) brightness(99%) contrast(60%);
   }
 }

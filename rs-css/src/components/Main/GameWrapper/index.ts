@@ -36,14 +36,24 @@ function createGameWrapper(parentClassName: string): void {
   const gameLevelWrapElem: HTMLElement = createElement('div', 'level__wrapper');
   addToParentElement('.level', gameLevelWrapElem);
 
+  const completedLevels: number[] = JSON.parse(localStorage.getItem('completed-levels') || '[]') as number[];
   for (let i = 1; i <= LEVELS.length; i += 1) {
+
     const gameLevelNameElem: HTMLElement = createElement('a', 'level__name', `level ${i}`);
     addToParentElement('.level__wrapper', gameLevelNameElem);
     const gameLevelCheckmarkElem: HTMLElement = createElement('span', 'level__checkmark');
     if (gameLevelNameElem) {
       gameLevelNameElem.prepend(gameLevelCheckmarkElem);
     };
+
+    completedLevels.forEach((levelNumber): void => {
+      if (levelNumber === i - 1) {
+        gameLevelCheckmarkElem.classList.add('check');
+      }
+    })
   }
+
+  console.log('completedLevels: ', completedLevels);
 }
 
 export default createGameWrapper;
