@@ -13,7 +13,7 @@ function createFooter(parentClassName: string): void {
   footerRSSLinkElem.target = '_blank' as string;
 
   const footerImgRSSchool: HTMLImageElement = createElement('img', 'footer__img footer__rsschool') as HTMLImageElement;
-  footerImgRSSchool.src = rssLogo as string;
+  footerImgRSSchool.src = rssLogo;
 
   const footerText: HTMLElement = createElement('p', 'footer__text', '2023 - RSSchool');
 
@@ -22,7 +22,7 @@ function createFooter(parentClassName: string): void {
   footerGithubLinkElem.target = '_blank' as string;
 
   const footerImgGithub: HTMLImageElement = createElement('img', 'footer__img footer__github') as HTMLImageElement;
-  footerImgGithub.src = githubLogo as string;
+  footerImgGithub.src = githubLogo;
 
   addToParentElement(parentClassName, footerElem);
 

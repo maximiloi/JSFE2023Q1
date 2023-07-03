@@ -8,7 +8,7 @@ function createHeader(parentClassName: string): void {
   const headerElem: HTMLElement = createElement('header', 'app__header header');
   const headerLogoElem: HTMLImageElement = createElement('img', 'header__logo') as HTMLImageElement;
   headerLogoElem.alt = 'logo images';
-  headerLogoElem.src = logoImg as string;
+  headerLogoElem.src = logoImg;
   const headerTitleElem: HTMLElement = createElement('h1', 'header__title', 'RSSchool | Css Dinner | iloi');
 
   headerElem.append(headerLogoElem, headerTitleElem);
