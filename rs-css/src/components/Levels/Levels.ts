@@ -166,7 +166,7 @@ export const LEVELS: ULevels[] = [
   },
   {
     doThis: "Select all the plates and bentos",
-    selector: "plate,bento",
+    selector: "plate, bento",
     selectorName: "Comma Combinator",
     helpTitle: "Combine, selectors, with... commas!",
     syntax: "A, B",
