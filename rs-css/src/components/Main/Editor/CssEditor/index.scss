@@ -38,8 +38,13 @@
 
     &__input--answer {
       width: calc(100% - 50px);
-      background: transparent;
       border: none;
+
+      background: rgba(0, 0, 255, 0.4);
+
+      &.error {
+        background: rgba(255, 0, 0, 0.7);
+      }
     }
 
     &__button {

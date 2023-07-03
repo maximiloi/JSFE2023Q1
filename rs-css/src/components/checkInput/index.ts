@@ -24,6 +24,13 @@ function checkWin(inputValue: string): void {
     const levelNext: string = levelNextNumber.toString();
     localStorage.setItem('current-level', levelNext);
     renderLevel(levelNext);
+  } else {
+    const inputAnswer: HTMLInputElement | null = document.querySelector('.input-answer');
+    if (!inputAnswer) return;
+    inputAnswer.style.background = 'rgba(255, 0, 0, .7)';
+    setTimeout((): void => {
+      inputAnswer.style.background = 'rgba(0, 0, 255, .4)';
+    }, 1000);
   }
 }
 
