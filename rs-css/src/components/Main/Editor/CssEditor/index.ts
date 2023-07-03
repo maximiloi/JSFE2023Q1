@@ -44,6 +44,10 @@ function createCssEditor(parentClassName: string): void {
   const editorCssInpuTextElem: HTMLElement = createElement('div', 'editor-pane__input--text');
   editorCssInpuTextElem.innerHTML = `{<br>/* Styles would go here. */<br>}`;
   addToParentElement('.editor-pane__input', editorCssInpuTextElem);
+
+  const editorCssHelpElem: HTMLElement = createElement('div', 'editor-pane__help');
+  editorCssHelpElem.innerHTML = '';
+  addToParentElement('.editor-pane__input', editorCssHelpElem);
 }
 
 export default createCssEditor;

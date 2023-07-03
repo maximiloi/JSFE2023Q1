@@ -1,5 +1,7 @@
 import hljs from 'highlight.js/lib/common';
 import 'highlight.js/scss/monokai-sublime.scss';
+import createElement from '../../utils/createElement';
+import addToParentElement from '../../utils/addToParentElement';
 import { LEVELS } from '../Levels/Levels';
 import renderTable from '../renderTable';
 
@@ -39,6 +41,22 @@ ${levelCode}
   elementsStrobe.forEach((element): void => {
     element.classList.add('strobe');
   });
+
+  const editorCssHelpElem: Element | null = document.querySelector('.editor-pane__help');
+  if (!editorCssHelpElem) return;
+  editorCssHelpElem.innerHTML = '';
+
+  const editorCssInputTextElem: HTMLElement = createElement('h3', 'editor-pane__title-help');
+  editorCssInputTextElem.textContent = LEVELS[levelNumber].selectorName as string;
+  addToParentElement('.editor-pane__help', editorCssInputTextElem);
+  const editorCssInputHelpElem: HTMLElement = createElement('p', 'editor-pane__text');
+  editorCssInputHelpElem.textContent = LEVELS[levelNumber].helpTitle;
+  addToParentElement('.editor-pane__help', editorCssInputHelpElem);
+  const editorCssInputHelp1Elem: HTMLElement = createElement('p', 'editor-pane__text');
+  editorCssInputHelp1Elem.innerHTML = LEVELS[levelNumber].help;
+  addToParentElement('.editor-pane__help', editorCssInputHelp1Elem);
+
+  console.log('LEVELS[levelNumber]: ', LEVELS[levelNumber].selectorName);
 
 }
 
