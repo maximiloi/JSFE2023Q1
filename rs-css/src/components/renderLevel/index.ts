@@ -55,9 +55,6 @@ ${levelCode}
   const editorCssInputHelp1Elem: HTMLElement = createElement('p', 'editor-pane__text');
   editorCssInputHelp1Elem.innerHTML = LEVELS[levelNumber].help;
   addToParentElement('.editor-pane__help', editorCssInputHelp1Elem);
-
-  console.log('LEVELS[levelNumber]: ', LEVELS[levelNumber].selectorName);
-
 }
 
 export default renderLevel;
