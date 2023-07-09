@@ -136,9 +136,9 @@ small {
 
 sub,
 sup {
+  position: relative;
   font-size: 75%;
   line-height: 0;
-  position: relative;
   vertical-align: baseline;
 }
 
@@ -256,11 +256,11 @@ fieldset {
  */
 
 legend {
+  /* 2 */
+  display: table;
   box-sizing: border-box;
   /* 1 */
   color: inherit;
-  /* 2 */
-  display: table;
   /* 1 */
   max-width: 100%;
   /* 1 */
