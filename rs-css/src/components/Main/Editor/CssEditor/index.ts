@@ -30,8 +30,8 @@ function createCssEditor(parentClassName: string): void {
   addToParentElement('.editor-pane__file', editorCssInputElem);
 
   const editorCssInputFieldElem: HTMLInputElement = createElement('input', 'editor-pane__input--answer input-answer') as HTMLInputElement;
-  editorCssInputFieldElem.type = 'text' as string;
-  editorCssInputFieldElem.placeholder = 'Type in a CSS selector' as string;
+  editorCssInputFieldElem.type = 'text';
+  editorCssInputFieldElem.placeholder = 'Type in a CSS selector';
   addToParentElement('.editor-pane__input', editorCssInputFieldElem);
 
   const editorCssButonElem: HTMLElement = createElement('div', 'editor-pane__button');
