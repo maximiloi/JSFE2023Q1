@@ -1,6 +1,6 @@
-function createElement(parentElem: string, tagName: string, className?: string, textContent?: string): void {
+function creatAddElementToPage(parentElem: string, tagName: string, className?: string, textContent?: string): void {
   const element: HTMLElement = document.createElement(tagName);
-  const ParentNodeElem: HTMLElement | null = document.querySelector(`${parentElem}`);
+  const parentNodeElem: HTMLElement | null = document.querySelector(parentElem);
 
   if (className) {
     className.split(' ').forEach((name): void => {
@@ -12,8 +12,8 @@ function createElement(parentElem: string, tagName: string, className?: string, 
     element.textContent = textContent.toString();
   }
 
-  if (!ParentNodeElem) return;
-  ParentNodeElem.append(element);
+  if (!parentNodeElem) return;
+  parentNodeElem.append(element);
 }
 
-export default createElement;
+export default creatAddElementToPage;
