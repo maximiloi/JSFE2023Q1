@@ -2,6 +2,8 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -17,9 +19,9 @@ const config = {
     host: 'localhost',
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new ESLintPlugin({ extensions: ['.ts'], fix: true }),
+    new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash].css' }),
 
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
@@ -32,12 +34,12 @@ const config = {
         exclude: ['/node_modules/'],
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: [stylesHandler, 'css-loader', 'postcss-loader', 'sass-loader'],
+        test: /\.(scss|sass)$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.css$/i,
-        use: [stylesHandler, 'css-loader', 'postcss-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
@@ -49,7 +51,7 @@ const config = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
+    extensions: ['.tsx', '.ts', '.jsx', '.js', '.scss', '.html', '...'],
   },
 };
 

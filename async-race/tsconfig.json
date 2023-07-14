@@ -4,6 +4,7 @@
     "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
+    "strict": true,
     "allowJs": true
   },
   "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
