@@ -7,8 +7,6 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
-const stylesHandler = 'style-loader';
-
 const config = {
   entry: './src/index.ts',
   output: {
@@ -17,6 +15,7 @@ const config = {
   devServer: {
     open: true,
     host: 'localhost',
+    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' }),
@@ -53,6 +52,7 @@ const config = {
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.scss', '.html', '...'],
   },
+  target: 'web',
 };
 
 module.exports = () => {
