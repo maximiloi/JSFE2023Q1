@@ -1,3 +1,1 @@
-import 'modern-normalize'
-
-import './userInterface'
+import 'modern-normalize';
