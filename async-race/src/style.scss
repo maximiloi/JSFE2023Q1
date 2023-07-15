@@ -5,6 +5,24 @@ body {
   background-color: #794f45;
 }
 
+button {
+  text-transform: capitalize;
+  padding: 5px 15px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input[type="text"] {
+  max-width: 170px;
+  padding: 5px 15px;
+}
+
+input[type="color"] {
+  height: 33px;
+}
+
 .app {
   margin: 1rem;
 }
