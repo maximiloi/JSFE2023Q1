@@ -1,3 +1,4 @@
+import renderLineCount from "../../../../utils/renderLineCount";
 import addToParentElement from "../../../../utils/addToParentElement";
 import createElement from "../../../../utils/createElement";
 
@@ -23,18 +24,14 @@ function createCssEditor(parentClassName: string): void {
 
   const editorCssNumElem: HTMLElement = createElement('div', 'editor-pane__number');
   addToParentElement('.editor-pane__file', editorCssNumElem);
-  let numberEditor = '';
-  for (let i = 1; i <= 20; i += 1) {
-    numberEditor += `${i}<br>`;
-  }
-  editorCssNumElem.innerHTML = numberEditor;
+  editorCssNumElem.innerHTML = renderLineCount();
 
   const editorCssInputElem: HTMLElement = createElement('div', 'editor-pane__input');
   addToParentElement('.editor-pane__file', editorCssInputElem);
 
   const editorCssInputFieldElem: HTMLInputElement = createElement('input', 'editor-pane__input--answer input-answer') as HTMLInputElement;
-  editorCssInputFieldElem.type = 'text' as string;
-  editorCssInputFieldElem.placeholder = 'Type in a CSS selector' as string;
+  editorCssInputFieldElem.type = 'text';
+  editorCssInputFieldElem.placeholder = 'Type in a CSS selector';
   addToParentElement('.editor-pane__input', editorCssInputFieldElem);
 
   const editorCssButonElem: HTMLElement = createElement('div', 'editor-pane__button');

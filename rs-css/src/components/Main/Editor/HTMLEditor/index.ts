@@ -1,3 +1,4 @@
+import renderLineCount from "../../../../utils/renderLineCount";
 import addToParentElement from "../../../../utils/addToParentElement";
 import createElement from "../../../../utils/createElement";
 
@@ -23,11 +24,7 @@ function createHTMLEditor(parentClassName: string): void {
 
   const editorHTMLNumElem: HTMLElement = createElement('div', 'editor-pane__number html__number');
   addToParentElement('.html-view', editorHTMLNumElem);
-  let numberEditor = '';
-  for (let i = 1; i <= 20; i += 1) {
-    numberEditor += `${i}<br>`;
-  }
-  editorHTMLNumElem.innerHTML = numberEditor;
+  editorHTMLNumElem.innerHTML = renderLineCount();
 
   const editorHTMLInputElem: HTMLElement = createElement('div', 'editor-pane__input html__output');
   addToParentElement('.html-view', editorHTMLInputElem);
