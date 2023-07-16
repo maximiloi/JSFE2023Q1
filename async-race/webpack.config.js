@@ -10,6 +10,9 @@ const isProduction = process.env.NODE_ENV == 'production';
 const config = {
   entry: './src/index.ts',
   output: {
+    assetModuleFilename: 'assets/[name].[contenthash][ext]',
+    clean: true,
+    filename: 'js/[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
@@ -34,7 +37,7 @@ const config = {
       },
       {
         test: /\.(scss|sass)$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.css$/i,
@@ -42,7 +45,7 @@ const config = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: 'asset',
+        type: 'asset/resource',
       },
 
       // Add your rules for custom modules here
