@@ -1,4 +1,6 @@
 .main {
+  flex-grow: 1;
+
   &__wrapper {
     margin: 20px 0;
   }
@@ -33,7 +35,9 @@
 
     &--game {
       display: flex;
-      align-items: flex-end
+      align-items: flex-end;
+
+      position: relative;
     }
   }
 
@@ -78,7 +82,7 @@
 
   &__flag {
     height: 42px;
-    position: fixed;
-    right: 120px;
+    position: absolute;
+    right: 90px;
   }
 }
