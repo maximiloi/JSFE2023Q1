@@ -1,0 +1,88 @@
+.main {
+  flex-grow: 1;
+
+  &__wrapper {
+    margin: 20px 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    &--button {
+      margin-top: 20px;
+    }
+  }
+
+  &__button:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.cars {
+  &__item {
+    height: 70px;
+    border-bottom: 2px dashed white;
+  }
+
+  &__inner {
+    &--info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      height: 26px;
+    }
+
+    &--game {
+      display: flex;
+      align-items: flex-end;
+
+      position: relative;
+    }
+  }
+
+  &__button {
+    padding: 2px 8px;
+
+    &--start {
+      background-color: #7F916E;
+    }
+
+    &--stop {
+      background-color: #C34F71;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 50px;
+      margin-right: 20px;
+
+      & button {
+        font-size: 10px;
+        border: none;
+
+
+        &:not(:last-child) {
+          margin-top: 4px;
+          margin-bottom: 6px;
+        }
+      }
+    }
+  }
+
+  &__model {
+    margin: 0;
+  }
+
+  &__car {
+    height: 40px;
+    transform: scaleX(-1);
+  }
+
+  &__flag {
+    height: 42px;
+    position: absolute;
+    right: 90px;
+  }
+}
