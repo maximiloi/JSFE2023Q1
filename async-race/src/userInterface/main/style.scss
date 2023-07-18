@@ -23,6 +23,10 @@
   &__item {
     height: 70px;
     border-bottom: 2px dashed white;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
   }
 
   &__inner {
