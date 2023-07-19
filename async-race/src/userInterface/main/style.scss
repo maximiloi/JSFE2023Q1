@@ -21,7 +21,6 @@
 
 .cars {
   &__item {
-    height: 70px;
     border-bottom: 2px dashed white;
 
     &:not(:last-child) {
@@ -30,6 +29,8 @@
   }
 
   &__inner {
+    margin-bottom: 5px;
+
     &--info {
       display: flex;
       align-items: center;
