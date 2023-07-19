@@ -20,6 +20,10 @@
 }
 
 .cars {
+  &__list {
+    margin-bottom: 10px;
+  }
+
   &__item {
     border-bottom: 2px dashed white;
 
