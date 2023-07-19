@@ -21,9 +21,15 @@ const config = {
     hot: true,
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      favicon: './src/assets/favicon.ico'
+    }),
     new ESLintPlugin({ extensions: ['.ts'], fix: true }),
-    new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash].css' }),
+    new MiniCssExtractPlugin(
+      {
+        filename: 'css/[name].[contenthash].css',
+      }),
 
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
@@ -44,7 +50,7 @@ const config = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|ico)$/i,
         type: 'asset/resource',
       },
 
