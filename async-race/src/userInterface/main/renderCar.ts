@@ -7,32 +7,27 @@ const carImage: string = `<svg height="40px" width="65px" viewBox="0 0 1280 806"
   </svg>`;
 
 async function renderCar(data: CarWithId[]): Promise<void> {
-  console.log('data: ', data);
 
   data.forEach(element => {
     const { name: carName, color: carColor, id: carId } = element;
 
     creatAddElementToPage('.cars__list', 'div', `cars__item cars__item-${carId}`);
-    creatAddElementToPage(`.cars__item-${carId}`, 'div', `cars__inner cars__inner--info cars__inner--info-${carId}`);
-
-    creatAddElementToPage(`.cars__inner--info-${carId}`, 'button', 'cars__button cars__button--select', 'select');
-    creatAddElementToPage(`.cars__inner--info-${carId}`, 'button', 'cars__button cars__button--remove', 'remove');
-    creatAddElementToPage(`.cars__inner--info-${carId}`, 'span', 'cars__spacer', '|');
-    creatAddElementToPage(`.cars__inner--info-${carId}`, 'h4', 'cars__model', carName);
-
-    creatAddElementToPage(`.cars__item-${carId}`, 'div', `cars__inner cars__inner--game cars__inner--game-${carId}`);
-
-    creatAddElementToPage(`.cars__inner--game-${carId}`, 'div', `cars__button-wrapper cars__button-wrapper-${carId}`);
-    creatAddElementToPage(`.cars__button-wrapper-${carId}`, 'button', 'cars__button cars__button--start', 'start');
-    creatAddElementToPage(`.cars__button-wrapper-${carId}`, 'button', 'cars__button cars__button--stop', 'stop');
-    creatAddElementToPage(`.cars__inner--game-${carId}`, 'div', `cars__car cars__car-${carId}`);
-    const carElement: HTMLElement | null = document.querySelector(`.cars__car-${carId}`);
+    creatAddElementToPage(`.cars__item-${carId}`, 'div', `cars__inner cars__inner--info cars__inner--info`);
+    creatAddElementToPage(`.cars__item-${carId} .cars__inner--info`, 'button', 'cars__button cars__button--select', 'select');
+    creatAddElementToPage(`.cars__item-${carId} .cars__inner--info`, 'button', 'cars__button cars__button--remove', 'remove');
+    creatAddElementToPage(`.cars__item-${carId} .cars__inner--info`, 'span', 'cars__spacer', '|');
+    creatAddElementToPage(`.cars__item-${carId} .cars__inner--info`, 'h4', 'cars__model', carName);
+    creatAddElementToPage(`.cars__item-${carId}`, 'div', `cars__inner cars__inner--game`);
+    creatAddElementToPage(`.cars__item-${carId} .cars__inner--game`, 'div', `cars__button-wrapper cars__button-wrapper`);
+    creatAddElementToPage(`.cars__item-${carId} .cars__button-wrapper`, 'button', 'cars__button cars__button--start', 'start');
+    creatAddElementToPage(`.cars__item-${carId} .cars__button-wrapper`, 'button', 'cars__button cars__button--stop', 'stop');
+    creatAddElementToPage(`.cars__item-${carId} .cars__inner--game`, 'div', `cars__car`);
+    const carElement: HTMLElement | null = document.querySelector(`.cars__item-${carId} .cars__car`);
     if (!carElement) return;
     carElement.innerHTML = carImage;
     carElement.style.fill = carColor;
-
-    creatAddElementToPage(`.cars__inner--game-${carId}`, 'img', `cars__flag cars__flag-${carId}`);
-    const flagElement: HTMLImageElement | null = document.querySelector(`.cars__flag-${carId}`);
+    creatAddElementToPage(`.cars__item-${carId} .cars__inner--game`, 'img', `cars__flag`);
+    const flagElement: HTMLImageElement | null = document.querySelector(`.cars__item-${carId} .cars__flag`);
     if (!flagElement) return;
     flagElement.src = flagImage;
   });
