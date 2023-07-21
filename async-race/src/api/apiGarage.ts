@@ -29,8 +29,7 @@ export async function numberCarsInGarage(): Promise<number> {
     const numberCars: number = Number(response.headers.get('X-Total-Count'));
     return numberCars;
   } catch (error) {
-    console.error('error: ', error);
-    throw error;
+    throw new Error("Not required numberCarsInGarage");
   }
 }
 
@@ -45,8 +44,7 @@ export async function getGarage(): Promise<CarWithId[]> {
     const data = await response.json() as CarWithId[];
     return data;
   } catch (error) {
-    console.error('error: ', error);
-    throw error;
+    throw new Error("Not required getGarage");
   }
 }
 
@@ -56,15 +54,25 @@ export async function getCar(id: number): Promise<CarWithId> {
       method: 'GET'
     });
     const data = await response.json() as CarWithId;
-    console.log('getCar data: ', data);
     return data;
   } catch (error) {
-    console.error('error: ', error);
-    throw error;
+    throw new Error("Not required getCar");
   }
 }
 
-// await getCar(1);
+export async function putUpdareCar(id: number, data: Car): Promise<void> {
+  try {
+    await fetch(`${API_URL}${QUERY_URL.garage}/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+  } catch (error) {
+    throw new Error("Not required putUpdareCar");
+  }
+}
 
 export async function postCreateCar(data: Car): Promise<void> {
   try {
@@ -76,7 +84,6 @@ export async function postCreateCar(data: Car): Promise<void> {
       body: JSON.stringify(data)
     });
   } catch (error) {
-    console.error('error: ', error);
-    throw error;
+    throw new Error("Not required postCreateCar");
   }
 }
