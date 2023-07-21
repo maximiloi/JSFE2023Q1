@@ -1,8 +1,8 @@
 import { Car } from "../api/apiType";
 import { getCar } from "../api/apiGarage";
 
-async function selectCar(hargetEl: HTMLElement): Promise<number | undefined> {
-  const { parentElement } = hargetEl;
+async function selectCar(targetEl: HTMLElement): Promise<number | undefined> {
+  const { parentElement } = targetEl;
   const grandparentElement: HTMLElement | null | undefined = parentElement?.parentElement;
   if (!grandparentElement) return;
   const { classList } = grandparentElement;

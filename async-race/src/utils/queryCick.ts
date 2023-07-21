@@ -1,6 +1,8 @@
 import changeCurrentLevel from "./changeCurrentLevel";
 import checkInput from "./checkInput";
+import deleteCar from "./deleteCar";
 import selectCar from "./selectCar";
+
 
 export async function documentActions(event: MouseEvent): Promise<void> {
   const targetElem = event.target as HTMLElement;
@@ -24,5 +26,9 @@ export async function documentActions(event: MouseEvent): Promise<void> {
 
   if (targetElem.closest('.cars__button--select')) {
     await selectCar(targetElem);
+  };
+
+  if (targetElem.closest('.cars__button--remove')) {
+    await deleteCar(targetElem);
   };
 }
