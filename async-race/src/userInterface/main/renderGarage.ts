@@ -6,6 +6,11 @@ import renderCar from "./renderCar";
 
 
 async function renderGarage(): Promise<void> {
+  const garageEl: HTMLElement | null = document.querySelector('.garage');
+  if (garageEl) {
+    garageEl.innerHTML = '';
+  }
+
   const apiData: CarWithId[] = await getGarage();
   const carNumbers: number = await numberCarsInGarage();
   const pageNumbers: string = checkLocalStorage();
