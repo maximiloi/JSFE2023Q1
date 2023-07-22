@@ -10,7 +10,7 @@ async function checkInput(element: HTMLElement): Promise<void> {
   if (carName === '') return;
 
   if (element.closest('.input-button__create')) {
-    await postCreateCar({ name: carName, color: carColor })
+    await postCreateCar({ name: carName, color: carColor });
   }
 
   if (element.closest('.input-button__update')) {

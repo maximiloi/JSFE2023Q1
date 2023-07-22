@@ -1,6 +1,7 @@
 import changeCurrentLevel from "./changeCurrentLevel";
 import checkInput from "./checkInput";
 import deleteCar from "./deleteCar";
+import generateCars from "./generateCars";
 import selectCar from "./selectCar";
 
 
@@ -30,5 +31,9 @@ export async function documentActions(event: MouseEvent): Promise<void> {
 
   if (targetElem.closest('.cars__button--remove')) {
     await deleteCar(targetElem);
+  };
+
+  if (targetElem.closest('.main__button--generate-cars')) {
+    await generateCars();
   };
 }
