@@ -1,8 +1,9 @@
 import changeCurrentLevel from "./changeCurrentLevel";
 import checkInput from "./checkInput";
+import selectCar from "./selectCar";
 
-export const documentActions = async (e: MouseEvent): Promise<void> => {
-  const targetElem = e.target as HTMLElement;
+export async function documentActions(event: MouseEvent): Promise<void> {
+  const targetElem = event.target as HTMLElement;
   if (!targetElem) return;
 
   if (targetElem.closest('.garage__button--prev')) {
@@ -15,5 +16,13 @@ export const documentActions = async (e: MouseEvent): Promise<void> => {
 
   if (targetElem.closest('.input-button__create')) {
     await checkInput(targetElem);
+  };
+
+  if (targetElem.closest('.input-button__update')) {
+    await checkInput(targetElem);
+  };
+
+  if (targetElem.closest('.cars__button--select')) {
+    await selectCar(targetElem);
   };
 }
