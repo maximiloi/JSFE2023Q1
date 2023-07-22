@@ -7,6 +7,8 @@ async function checkInput(element: HTMLElement): Promise<void> {
   const carName: string = carNameEl.value;
   const carColor: string = carColorEl.value;
 
+  if (carName === '') return;
+
   if (element.closest('.input-button__create')) {
     await postCreateCar({ name: carName, color: carColor })
   }

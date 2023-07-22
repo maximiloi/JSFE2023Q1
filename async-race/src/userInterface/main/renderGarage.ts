@@ -8,7 +8,10 @@ import renderCar from "./renderCar";
 async function renderGarage(): Promise<void> {
   const garageEl: HTMLElement | null = document.querySelector('.garage');
   if (garageEl) {
-    garageEl.innerHTML = '';
+    while (garageEl.firstChild) {
+      garageEl.removeChild(garageEl.firstChild);
+    }
+    garageEl.parentNode?.removeChild(garageEl);
   }
 
   const apiData: CarWithId[] = await getGarage();
