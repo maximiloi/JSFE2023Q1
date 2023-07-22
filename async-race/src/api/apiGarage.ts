@@ -87,3 +87,13 @@ export async function postCreateCar(data: Car): Promise<void> {
     throw new Error("Not required postCreateCar");
   }
 }
+
+export async function apiDeleteCar(id: number): Promise<void> {
+  try {
+    await fetch(`${API_URL}${QUERY_URL.garage}/${id}`, {
+      method: 'DELETE',
+    });
+  } catch (error) {
+    throw new Error("Not required deleteCar");
+  }
+}
