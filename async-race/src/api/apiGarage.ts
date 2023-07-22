@@ -50,7 +50,7 @@ export async function getGarage(): Promise<CarWithId[]> {
   }
 }
 
-export async function getCar(id?: number): Promise<CarWithId> {
+export async function getCar(id: number): Promise<CarWithId> {
   try {
     const response: Response = await fetch(`${API_URL}${QUERY_URL.garage}/${id}`, {
       method: 'GET'
@@ -64,24 +64,19 @@ export async function getCar(id?: number): Promise<CarWithId> {
   }
 }
 
-await getCar(1);
+// await getCar(1);
 
-export async function CreateCar(data: Car): Promise<Car> {
+export async function postCreateCar(data: Car): Promise<void> {
   try {
-    const response: Response = await fetch(`${API_URL}${QUERY_URL.garage}`, {
+    await fetch(`${API_URL}${QUERY_URL.garage}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
     });
-    const newCar = await response.json() as CarWithId;
-    console.log('newCar: ', newCar);
-    return newCar;
   } catch (error) {
     console.error('error: ', error);
     throw error;
   }
 }
-
-// await CreateCar({ name: 'newCar', color: '#ffffff' });
