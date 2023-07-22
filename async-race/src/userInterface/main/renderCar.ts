@@ -21,6 +21,8 @@ async function renderCar(carArray: CarWithId[]): Promise<void> {
     creatAddElementToPage(`.cars__item-${carId} .cars__inner--game`, 'div', `cars__button-wrapper cars__button-wrapper`);
     creatAddElementToPage(`.cars__item-${carId} .cars__button-wrapper`, 'button', 'cars__button cars__button--start', 'start');
     creatAddElementToPage(`.cars__item-${carId} .cars__button-wrapper`, 'button', 'cars__button cars__button--stop', 'stop');
+    const stopButtonEl = document.querySelector(`.cars__item-${carId} .cars__button--stop`) as HTMLButtonElement;
+    stopButtonEl.disabled = true;
     creatAddElementToPage(`.cars__item-${carId} .cars__inner--game`, 'div', `cars__car`);
     const carElement = document.querySelector(`.cars__item-${carId} .cars__car`) as HTMLElement;
     carElement.innerHTML = carImage;
