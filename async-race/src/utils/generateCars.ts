@@ -11,7 +11,7 @@ function generateRandomColor(): string {
 }
 
 async function generateCars(): Promise<void> {
-  const CAR_BRANDS: string[] = ['Tesla', 'Mazda', 'BMW', 'Subaru', 'Porsche', 'Honda', 'Lexus', 'Toyota', 'Chrysler', 'Buick', 'Hyundai', 'Audi', 'Infiniti', 'Nissan', 'Dodge', 'Mini', 'Volkswagen', 'Kia', 'Volvo', 'Mercedes-Benz', 'illac', 'Acura', 'Chevrolet', 'Ford', 'Jaguar', 'Lincoln', 'Jeep', 'Mitsubishi', 'Land Rover', 'Alfa Romeo'];
+  const CAR_BRANDS: string[] = ['Tesla', 'Mazda', 'BMW', 'Subaru', 'Porsche', 'Honda', 'Lexus', 'Toyota', 'Chrysler', 'Buick', 'Hyundai', 'Audi', 'Infiniti', 'Nissan', 'Dodge', 'Mini', 'Volkswagen', 'Kia', 'Volvo', 'Mercedes-Benz', 'Cadillac', 'Acura', 'Chevrolet', 'Ford', 'Jaguar', 'Lincoln', 'Jeep', 'Mitsubishi', 'Land Rover', 'Alfa Romeo'];
   const CAR_NAME: string[] = ['S', '3', 'LX', 'Diesel', 'GT', '4x4', '6', 'M', 'Turbo', 'ZAZ'];
   const COUNT_CAR: number = 100;
 
