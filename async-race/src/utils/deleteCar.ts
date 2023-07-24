@@ -6,7 +6,7 @@ async function deleteCar(targetElem: HTMLElement): Promise<void> {
   const grandparentElement: HTMLElement | null | undefined = parentElement?.parentElement;
   if (!grandparentElement) return;
   const { classList } = grandparentElement;
-  const carId: string | null = classList.item(2);
+  const carId: string | undefined = classList.item(1)?.split('-')[1];
   await apiDeleteCar(Number(carId));
   await renderGarage();
 }
