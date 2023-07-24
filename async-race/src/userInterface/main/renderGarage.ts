@@ -1,7 +1,7 @@
 import checkLocalStorage from "../../utils/checkLocalStorage";
 import creatAddElementToPage from "../../utils/createElement";
 import { CarWithId } from "../../api/apiType";
-import { NUMBER_CARS_ON_PAGE, getGarage, numberCarsInGarage } from "../../api/apiGarage";
+import { NUMBER_CARS_ON_PAGE, apiGetGarage, apiNumberCarsInGarage } from "../../api/apiGarage";
 import renderCar from "./renderCar";
 
 
@@ -14,8 +14,8 @@ async function renderGarage(): Promise<void> {
     garageEl.parentNode?.removeChild(garageEl);
   }
 
-  const apiData: CarWithId[] = await getGarage();
-  const carNumbers: number = await numberCarsInGarage();
+  const apiData: CarWithId[] = await apiGetGarage();
+  const carNumbers: number = await apiNumberCarsInGarage();
   const pageNumber: string = checkLocalStorage();
   const pageCount = Math.ceil(Number(carNumbers) / NUMBER_CARS_ON_PAGE)
 
