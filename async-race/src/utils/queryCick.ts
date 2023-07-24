@@ -3,6 +3,7 @@ import checkInput from "./checkInput";
 import deleteCar from "./deleteCar";
 import generateCars from "./generateCars";
 import selectCar from "./selectCar";
+import startStopCar from "./startStop";
 
 
 export async function documentActions(event: MouseEvent): Promise<void> {
@@ -35,5 +36,13 @@ export async function documentActions(event: MouseEvent): Promise<void> {
 
   if (targetElem.closest('.main__button--generate-cars')) {
     await generateCars();
+  };
+
+  if (targetElem.closest('.cars__button--start')) {
+    startStopCar(targetElem, 'start');
+  };
+
+  if (targetElem.closest('.cars__button--stop')) {
+    startStopCar(targetElem, 'stop');
   };
 }

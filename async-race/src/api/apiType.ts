@@ -6,3 +6,8 @@ export type Car = {
 export type CarWithId = Car & {
   id: number;
 }
+
+export type CarEngine = {
+  velocity: number;
+  distance: number;
+}

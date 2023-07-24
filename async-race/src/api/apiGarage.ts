@@ -1,5 +1,5 @@
 import checkLocalStorage from "../utils/checkLocalStorage";
-import { Car, CarWithId } from "./apiType";
+import { Car, CarWithId, CarEngine } from "./apiType";
 
 const API_URL = 'http://127.0.0.1:3000';
 export const NUMBER_CARS_ON_PAGE = 7;
@@ -14,11 +14,16 @@ interface QueryParams {
   value: number;
 }
 
-function generateQueryString(queryParams: QueryParams[] = []): string {
+interface QueryParamsStart {
+  key: string;
+  value: string | number;
+}
+
+function generateQueryString(queryParams: QueryParams[] | QueryParamsStart[] = []): string {
   return queryParams.length ? `?${queryParams.map(x => `${x.key}=${x.value}`).join('&')}` : '';
 }
 
-export async function numberCarsInGarage(): Promise<number> {
+export async function apiNumberCarsInGarage(): Promise<number> {
   const numberPage: number = Number(checkLocalStorage());
 
   try {
@@ -33,7 +38,7 @@ export async function numberCarsInGarage(): Promise<number> {
   }
 }
 
-export async function getGarage(): Promise<CarWithId[]> {
+export async function apiGetGarage(): Promise<CarWithId[]> {
   const numberPage: number = Number(checkLocalStorage());
 
   try {
@@ -48,7 +53,7 @@ export async function getGarage(): Promise<CarWithId[]> {
   }
 }
 
-export async function getCar(id: number): Promise<CarWithId> {
+export async function apiGetCar(id: number): Promise<CarWithId> {
   try {
     const response: Response = await fetch(`${API_URL}${QUERY_URL.garage}/${id}`, {
       method: 'GET'
@@ -60,7 +65,7 @@ export async function getCar(id: number): Promise<CarWithId> {
   }
 }
 
-export async function putUpdareCar(id: number, data: Car): Promise<void> {
+export async function apiUpdareCar(id: number, data: Car): Promise<void> {
   try {
     await fetch(`${API_URL}${QUERY_URL.garage}/${id}`, {
       method: 'PUT',
@@ -74,7 +79,7 @@ export async function putUpdareCar(id: number, data: Car): Promise<void> {
   }
 }
 
-export async function postCreateCar(data: Car): Promise<void> {
+export async function apiPostCreateCar(data: Car): Promise<void> {
   try {
     await fetch(`${API_URL}${QUERY_URL.garage}`, {
       method: 'POST',
@@ -94,6 +99,36 @@ export async function apiDeleteCar(id: number): Promise<void> {
       method: 'DELETE',
     });
   } catch (error) {
-    throw new Error("Not required deleteCar");
+    throw new Error("Not required apiDeleteCar");
+  }
+}
+
+export async function apiStarStopCar(idCar: number, status: string): Promise<CarEngine> {
+  const engineStatus: string = status === 'start' ? 'started' : 'stopped';
+  try {
+    const QueryParamsStart: QueryParamsStart[] = [{ key: 'id', value: idCar }, { key: 'status', value: engineStatus }]
+    const response: Response = await fetch(`${API_URL}${QUERY_URL.engine}${generateQueryString(QueryParamsStart)}`, {
+      method: 'PATCH'
+    });
+    const data = await response.json() as CarEngine;
+    return data;
+  } catch (error) {
+    throw new Error("Not required apiStarStopCar");
+  }
+}
+
+export async function apiDriveMode(idCar: number): Promise<void> {
+  try {
+    const QueryParamsStart: QueryParamsStart[] = [{ key: 'id', value: idCar }, { key: 'status', value: 'drive' }]
+    const response: Response = await fetch(`${API_URL}${QUERY_URL.engine}${generateQueryString(QueryParamsStart)}`, {
+      method: 'PATCH'
+    });
+
+    if (!response.ok) {
+      console.log('response.status: ', response.status);
+      // throw new Error(`Request failed with status ${response.status}`);
+    }
+  } catch (error) {
+    throw new Error("Not required apiDriveMode");
   }
 }
