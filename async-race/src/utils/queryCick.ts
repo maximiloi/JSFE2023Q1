@@ -39,10 +39,10 @@ export async function documentActions(event: MouseEvent): Promise<void> {
   };
 
   if (targetElem.closest('.cars__button--start')) {
-    startStopCar(targetElem, 'start');
+    await startStopCar(targetElem, 'start');
   };
 
   if (targetElem.closest('.cars__button--stop')) {
-    startStopCar(targetElem, 'stop');
+    await startStopCar(targetElem, 'stop');
   };
 }
