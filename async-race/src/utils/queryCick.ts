@@ -1,4 +1,5 @@
 import changeCurrentLevel from "./changeCurrentLevel";
+import checkHeaderButton from "./checkHeaderButton";
 import checkInput from "./checkInput";
 import deleteCar from "./deleteCar";
 import generateCars from "./generateCars";
@@ -35,5 +36,13 @@ export async function documentActions(event: MouseEvent): Promise<void> {
 
   if (targetElem.closest('.main__button--generate-cars')) {
     await generateCars();
+  };
+
+  if (targetElem.closest('.header__button--garage')) {
+    checkHeaderButton('garage');
+  };
+
+  if (targetElem.closest('.header__button--winners')) {
+    checkHeaderButton('winners');
   };
 }
