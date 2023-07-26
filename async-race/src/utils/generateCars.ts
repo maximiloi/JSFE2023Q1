@@ -1,4 +1,4 @@
-import { postCreateCar } from "../api/apiGarage";
+import { apiPostCreateCar } from "../api/apiGarage";
 import renderGarage from "../userInterface/main/renderGarage";
 
 function generateRandomColor(): string {
@@ -24,7 +24,7 @@ async function generateCars(): Promise<void> {
     const randomBrandWord = CAR_BRANDS[randomBrandIndex];
     const randomCarNameWord = CAR_NAME[randomCarNameIndex];
 
-    promisesArr.push(postCreateCar({ name: `${randomBrandWord} ${randomCarNameWord}`, color: generateRandomColor() }));
+    promisesArr.push(apiPostCreateCar({ name: `${randomBrandWord} ${randomCarNameWord}`, color: generateRandomColor() }));
   }
 
   await Promise.all(promisesArr);

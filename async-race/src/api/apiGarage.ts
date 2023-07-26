@@ -15,16 +15,16 @@ interface QueryParams {
   value: number;
 }
 
-interface QueryParamsWinners {
+interface QueryParamsStart {
   key: string;
-  value: number | string;
+  value: string | number;
 }
 
-function generateQueryString(queryParams: QueryParams[] | QueryParamsWinners[] = []): string {
+function generateQueryString(queryParams: QueryParams[] | QueryParamsStart[] = []): string {
   return queryParams.length ? `?${queryParams.map(x => `${x.key}=${x.value}`).join('&')}` : '';
 }
 
-export async function numberCarsInGarage(): Promise<number> {
+export async function apiNumberCarsInGarage(): Promise<number> {
   const numberPage: number = Number(checkLocalStorage());
 
   try {
@@ -39,7 +39,7 @@ export async function numberCarsInGarage(): Promise<number> {
   }
 }
 
-export async function getGarage(): Promise<CarWithId[]> {
+export async function apiGetGarage(): Promise<CarWithId[]> {
   const numberPage: number = Number(checkLocalStorage());
 
   try {
@@ -54,7 +54,7 @@ export async function getGarage(): Promise<CarWithId[]> {
   }
 }
 
-export async function getCar(id: number): Promise<CarWithId> {
+export async function apiGetCar(id: number): Promise<CarWithId> {
   try {
     const response: Response = await fetch(`${API_URL}${QUERY_URL.garage}/${id}`, {
       method: 'GET'
@@ -66,7 +66,7 @@ export async function getCar(id: number): Promise<CarWithId> {
   }
 }
 
-export async function putUpdareCar(id: number, data: Car): Promise<void> {
+export async function apiUpdareCar(id: number, data: Car): Promise<void> {
   try {
     await fetch(`${API_URL}${QUERY_URL.garage}/${id}`, {
       method: 'PUT',
@@ -80,7 +80,7 @@ export async function putUpdareCar(id: number, data: Car): Promise<void> {
   }
 }
 
-export async function postCreateCar(data: Car): Promise<void> {
+export async function apiPostCreateCar(data: Car): Promise<void> {
   try {
     await fetch(`${API_URL}${QUERY_URL.garage}`, {
       method: 'POST',
@@ -100,13 +100,43 @@ export async function apiDeleteCar(id: number): Promise<void> {
       method: 'DELETE',
     });
   } catch (error) {
-    throw new Error("Not required deleteCar");
+    throw new Error("Not required apiDeleteCar");
+  }
+}
+
+export async function apiStarStopCar(idCar: number, status: string): Promise<CarWinner> {
+  const engineStatus: string = status === 'start' ? 'started' : 'stopped';
+  try {
+    const QueryParamsStart: QueryParamsStart[] = [{ key: 'id', value: idCar }, { key: 'status', value: engineStatus }]
+    const response: Response = await fetch(`${API_URL}${QUERY_URL.engine}${generateQueryString(QueryParamsStart)}`, {
+      method: 'PATCH'
+    });
+    const data = await response.json() as CarWinner;
+    return data;
+  } catch (error) {
+    throw new Error("Not required apiStarStopCar");
+  }
+}
+
+export async function apiDriveMode(idCar: number): Promise<void> {
+  try {
+    const QueryParamsStart: QueryParamsStart[] = [{ key: 'id', value: idCar }, { key: 'status', value: 'drive' }]
+    const response: Response = await fetch(`${API_URL}${QUERY_URL.engine}${generateQueryString(QueryParamsStart)}`, {
+      method: 'PATCH'
+    });
+
+    if (!response.ok) {
+      console.log('response.status: ', response.status);
+      // throw new Error(`Request failed with status ${response.status}`);
+    }
+  } catch (error) {
+    throw new Error("Not required apiDriveMode");
   }
 }
 
 export async function apiGetWinners(sort: string = 'id', order: string = 'ASC'): Promise<CarWinner[]> {
   try {
-    const queryParams: QueryParamsWinners[] = [
+    const queryParams: QueryParamsStart[] = [
       { key: '_page', value: 1 },
       { key: '_limit', value: NUMBER_WINNERS_ON_PAGE },
       { key: '_sort', value: sort },

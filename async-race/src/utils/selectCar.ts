@@ -1,14 +1,14 @@
 import { Car } from "../api/apiType";
-import { getCar } from "../api/apiGarage";
+import { apiGetCar } from "../api/apiGarage";
 
 async function selectCar(targetEl: HTMLElement): Promise<number | undefined> {
   const { parentElement } = targetEl;
   const grandparentElement: HTMLElement | null | undefined = parentElement?.parentElement;
   if (!grandparentElement) return;
   const { classList } = grandparentElement;
-  const carId: string | null = classList.item(2);
+  const carId: string | undefined = classList.item(1)?.split('-')[1];
   if (!carId) return;
-  const car: Car = await getCar(Number(carId));
+  const car: Car = await apiGetCar(Number(carId));
 
   const inputNameUpdate: HTMLInputElement | null = document.querySelector('.input-text__update');
   const inputColorUpdate: HTMLInputElement | null = document.querySelector('.input-color__update');

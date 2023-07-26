@@ -1,5 +1,5 @@
 import renderGarage from "../userInterface/main/renderGarage";
-import { postCreateCar, putUpdareCar } from "../api/apiGarage";
+import { apiPostCreateCar, apiUpdareCar } from "../api/apiGarage";
 
 async function checkInput(element: HTMLElement): Promise<void> {
   const carColorEl = element.previousSibling as HTMLInputElement;
@@ -10,13 +10,13 @@ async function checkInput(element: HTMLElement): Promise<void> {
   if (carName === '') return;
 
   if (element.closest('.input-button__create')) {
-    await postCreateCar({ name: carName, color: carColor });
+    await apiPostCreateCar({ name: carName, color: carColor });
   }
 
   if (element.closest('.input-button__update')) {
     const carId: string | null = localStorage.getItem('car-id');
     if (!carId) return;
-    await putUpdareCar(Number(carId), { name: carName, color: carColor });
+    await apiUpdareCar(Number(carId), { name: carName, color: carColor });
   }
 
   await renderGarage();
