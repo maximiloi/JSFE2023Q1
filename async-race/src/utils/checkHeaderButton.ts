@@ -1,4 +1,9 @@
-function checkHeaderButton(value: string) {
+import { CarWinnerWithColorAndName } from "../api/apiType";
+import { apiGetWinners } from "../api/apiGarage";
+import rendersWinnerTable from "../userInterface/winners/rendersWinnerTable";
+import getSortData from "./getSortData";
+
+async function checkHeaderButton(value: string): Promise<void> {
   const buttonGarageEl: HTMLButtonElement | null = document.querySelector('.header__button--garage');
   const buttonWinnersEl: HTMLButtonElement | null = document.querySelector('.header__button--winners');
   if (!buttonGarageEl || !buttonWinnersEl) return;
@@ -10,7 +15,6 @@ function checkHeaderButton(value: string) {
 
 
   if (value === 'garage') {
-    console.log('value: ', value);
     buttonGarageEl.disabled = true;
     buttonWinnersEl.disabled = false;
     mainWinnersEl.classList.add('hidden');
@@ -19,12 +23,13 @@ function checkHeaderButton(value: string) {
   }
 
   if (value === 'winners') {
-    console.log('value: ', value);
     buttonWinnersEl.disabled = true;
     buttonGarageEl.disabled = false;
     mainWrapperInputEl.classList.add('hidden');
     mainGarageEl.classList.add('hidden');
     mainWinnersEl.classList.remove('hidden');
+    const data: CarWinnerWithColorAndName[] = await getSortData(await apiGetWinners());
+    await rendersWinnerTable(data);
   }
 }
 
