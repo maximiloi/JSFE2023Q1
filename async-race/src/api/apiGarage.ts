@@ -1,8 +1,9 @@
 import checkLocalStorage from "../utils/checkLocalStorage";
-import { Car, CarWithId, CarEngine } from "./apiType";
+import { Car, CarWithId, CarWinner } from "./apiType";
 
 const API_URL = 'http://127.0.0.1:3000';
 export const NUMBER_CARS_ON_PAGE = 7;
+const NUMBER_WINNERS_ON_PAGE = 15;
 const QUERY_URL = {
   garage: '/garage',
   engine: '/engine',
@@ -103,14 +104,14 @@ export async function apiDeleteCar(id: number): Promise<void> {
   }
 }
 
-export async function apiStarStopCar(idCar: number, status: string): Promise<CarEngine> {
+export async function apiStarStopCar(idCar: number, status: string): Promise<CarWinner> {
   const engineStatus: string = status === 'start' ? 'started' : 'stopped';
   try {
     const QueryParamsStart: QueryParamsStart[] = [{ key: 'id', value: idCar }, { key: 'status', value: engineStatus }]
     const response: Response = await fetch(`${API_URL}${QUERY_URL.engine}${generateQueryString(QueryParamsStart)}`, {
       method: 'PATCH'
     });
-    const data = await response.json() as CarEngine;
+    const data = await response.json() as CarWinner;
     return data;
   } catch (error) {
     throw new Error("Not required apiStarStopCar");
@@ -130,5 +131,23 @@ export async function apiDriveMode(idCar: number): Promise<void> {
     }
   } catch (error) {
     throw new Error("Not required apiDriveMode");
+  }
+}
+
+export async function apiGetWinners(sort: string = 'id', order: string = 'ASC'): Promise<CarWinner[]> {
+  try {
+    const queryParams: QueryParamsStart[] = [
+      { key: '_page', value: 1 },
+      { key: '_limit', value: NUMBER_WINNERS_ON_PAGE },
+      { key: '_sort', value: sort },
+      { key: '_order', value: order },
+    ]
+    const response: Response = await fetch(`${API_URL}${QUERY_URL.winners}${generateQueryString(queryParams)}`, {
+      method: 'GET'
+    });
+    const data = await response.json() as CarWinner[];
+    return data;
+  } catch (error) {
+    throw new Error("Not required apiGetWinners");
   }
 }

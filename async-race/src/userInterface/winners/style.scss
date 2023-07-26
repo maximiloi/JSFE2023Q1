@@ -21,6 +21,17 @@
     &--large {
       max-width: calc(500px - 75px * 3);
       flex-basis: calc(500px - 75px * 3);
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+  }
+
+  &__car {
+    margin-right: 5px;
+
+    & svg {
+      height: 18px;
+      width: 35px;
     }
   }
 
