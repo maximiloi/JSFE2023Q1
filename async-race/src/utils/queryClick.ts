@@ -5,6 +5,7 @@ import checkSort from "./checkSort";
 import deleteCar from "./deleteCar";
 import generateCars from "./generateCars";
 import selectCar from "./selectCar";
+import startStopCar from "./startStop";
 
 
 export async function documentActions(event: MouseEvent): Promise<void> {
@@ -20,7 +21,9 @@ export async function documentActions(event: MouseEvent): Promise<void> {
   if (targetElem.closest('.main__button--generate-cars')) await generateCars();
   if (targetElem.closest('.header__button--garage')) await checkHeaderButton('garage');
   if (targetElem.closest('.header__button--winners')) await checkHeaderButton('winners');
-  if (targetElem.closest('.table__sort--id')) checkSort('sort-id');
-  if (targetElem.closest('.table__sort--wins')) checkSort('sort-wins');
-  if (targetElem.closest('.table__sort--time')) checkSort('sort-time');
+  if (targetElem.closest('.table__sort--id')) await checkSort('sort-id');
+  if (targetElem.closest('.table__sort--wins')) await checkSort('sort-wins');
+  if (targetElem.closest('.table__sort--time')) await checkSort('sort-time');
+  if (targetElem.closest('.cars__button--start')) await startStopCar(targetElem, 'start');
+  if (targetElem.closest('.cars__button--stop')) await startStopCar(targetElem, 'stop');
 }

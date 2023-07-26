@@ -1,10 +1,10 @@
-import { CarEngine } from "../api/apiType";
+import { CarEngine } from "src/api/apiType";
 import { apiStarStopCar, apiDriveMode } from "../api/apiGarage";
 import { animateCar, stopAnimation } from "./animateCar";
 import findCarId from "./findCarId";
 import findCarElem from "./findCarElem";
 
-async function startStopCar(carIdEl: HTMLElement, value: string) {
+async function startStopCar(carIdEl: HTMLElement, value: string): Promise<void> {
   const carId: number | null | undefined = findCarId(carIdEl);
   if (!carId || !carIdEl) return;
   const carElem: HTMLElement = findCarElem(carIdEl);

@@ -1,5 +1,5 @@
 import checkLocalStorage from "../utils/checkLocalStorage";
-import { Car, CarWithId, CarWinner } from "./apiType";
+import { Car, CarWithId, CarWinner, CarEngine } from "./apiType";
 
 const API_URL = 'http://127.0.0.1:3000';
 export const NUMBER_CARS_ON_PAGE = 7;
@@ -104,14 +104,14 @@ export async function apiDeleteCar(id: number): Promise<void> {
   }
 }
 
-export async function apiStarStopCar(idCar: number, status: string): Promise<CarWinner> {
+export async function apiStarStopCar(idCar: number, status: string): Promise<CarEngine> {
   const engineStatus: string = status === 'start' ? 'started' : 'stopped';
   try {
     const QueryParamsStart: QueryParamsStart[] = [{ key: 'id', value: idCar }, { key: 'status', value: engineStatus }]
     const response: Response = await fetch(`${API_URL}${QUERY_URL.engine}${generateQueryString(QueryParamsStart)}`, {
       method: 'PATCH'
     });
-    const data = await response.json() as CarWinner;
+    const data = await response.json() as CarEngine;
     return data;
   } catch (error) {
     throw new Error("Not required apiStarStopCar");

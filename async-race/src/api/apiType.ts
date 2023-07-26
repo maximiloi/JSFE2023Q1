@@ -17,3 +17,8 @@ export type CarWinnerWithColorAndName = CarWinner & {
   color: string;
   name: string;
 }
+
+export type CarEngine = {
+  velocity: number;
+  distance: number;
+}
