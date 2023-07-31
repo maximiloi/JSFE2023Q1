@@ -1,4 +1,4 @@
- # Task Presentation - Husky
+# Task Presentation - Husky
 
 **Main Requirements:**  
 > Language - English  
