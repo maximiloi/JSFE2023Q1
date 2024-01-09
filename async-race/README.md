@@ -6,7 +6,7 @@
 
 # Stack
 
-TypeScript, SCSS, Webpack
+TypeScript, SCSS, Webpack.
 
 # devDependencies
 Prettier, Eslint, eslint-config-airbnb-typescript, gh-pages
