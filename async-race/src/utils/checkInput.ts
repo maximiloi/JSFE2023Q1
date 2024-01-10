@@ -17,6 +17,7 @@ async function checkInput(element: HTMLElement): Promise<void> {
     const carId: string | null = localStorage.getItem('car-id');
     if (!carId) return;
     await apiUpdareCar(Number(carId), { name: carName, color: carColor });
+    localStorage.removeItem('car-id');
   }
 
   await renderGarage();
