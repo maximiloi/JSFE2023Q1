@@ -14,10 +14,10 @@ async function renderGarage(): Promise<void> {
     garageEl.parentNode?.removeChild(garageEl);
   }
 
-  const apiData: CarWithId[] = await apiGetGarage();
   const carNumbers: number = await apiNumberCarsInGarage();
-  const pageNumber: string = checkLocalStorage();
   const pageCount = Math.ceil(Number(carNumbers) / NUMBER_CARS_ON_PAGE)
+  let pageNumber: string = checkLocalStorage();
+  let apiData: CarWithId[] = await apiGetGarage();
 
   creatAddElementToPage('.main', 'section', 'main__garage garage');
   creatAddElementToPage('.garage', 'h2', 'garage__title', 'Garage');
@@ -28,6 +28,11 @@ async function renderGarage(): Promise<void> {
   creatAddElementToPage('.garage__wrapper', 'h3', 'garage__title garage__title--page', 'Page #');
   creatAddElementToPage('.garage__title--page', 'span', 'garage__page-number');
   const pageNumberEl = document.querySelector('.garage__page-number') as HTMLElement;
+  if (+pageNumber > +pageCount) {
+    localStorage.setItem('garage-page', `${pageCount}`);
+    pageNumber = checkLocalStorage();
+    apiData = await apiGetGarage();
+  }
   pageNumberEl.innerHTML = ` ${pageNumber} / ${pageCount}`;
   creatAddElementToPage('.garage__wrapper', 'div', 'garage__wrapper--button');
   creatAddElementToPage('.garage__wrapper--button', 'button', 'garage__button garage__button--prev', 'prev');
