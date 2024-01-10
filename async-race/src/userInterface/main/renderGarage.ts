@@ -28,7 +28,7 @@ async function renderGarage(): Promise<void> {
   creatAddElementToPage('.garage__wrapper', 'h3', 'garage__title garage__title--page', 'Page #');
   creatAddElementToPage('.garage__title--page', 'span', 'garage__page-number');
   const pageNumberEl = document.querySelector('.garage__page-number') as HTMLElement;
-  if (+pageNumber > +pageCount) {
+  if (+pageNumber > +pageCount && +pageNumber !== 1) {
     localStorage.setItem('garage-page', `${pageCount}`);
     pageNumber = checkLocalStorage();
     apiData = await apiGetGarage();
