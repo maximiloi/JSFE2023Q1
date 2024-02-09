@@ -1,4 +1,4 @@
-import creatAddElementToPage from "../../utils/createElement";
+import createItemOnPage from "../../utils/createElement";
 import flagImage from '../../assets/flag.png';
 import { CarWithId } from "../../api/apiType";
 
@@ -11,23 +11,23 @@ async function renderCar(carArray: CarWithId[]): Promise<void> {
   carArray.forEach(car => {
     const { name: carName, color: carColor, id: carId } = car;
 
-    creatAddElementToPage('.cars__list', 'div', `cars__item cars__item-${carId}`);
-    creatAddElementToPage(`.cars__item-${carId}`, 'div', `cars__inner cars__inner--info cars__inner--info`);
-    creatAddElementToPage(`.cars__item-${carId} .cars__inner--info`, 'button', 'cars__button cars__button--select', 'select');
-    creatAddElementToPage(`.cars__item-${carId} .cars__inner--info`, 'button', 'cars__button cars__button--remove', 'remove');
-    creatAddElementToPage(`.cars__item-${carId} .cars__inner--info`, 'span', 'cars__spacer', '|');
-    creatAddElementToPage(`.cars__item-${carId} .cars__inner--info`, 'h4', 'cars__model', carName);
-    creatAddElementToPage(`.cars__item-${carId}`, 'div', `cars__inner cars__inner--game`);
-    creatAddElementToPage(`.cars__item-${carId} .cars__inner--game`, 'div', `cars__button-wrapper cars__button-wrapper`);
-    creatAddElementToPage(`.cars__item-${carId} .cars__button-wrapper`, 'button', 'cars__button cars__button--start', 'start');
-    creatAddElementToPage(`.cars__item-${carId} .cars__button-wrapper`, 'button', 'cars__button cars__button--stop', 'stop');
+    createItemOnPage('.cars__list', 'div', `cars__item cars__item-${carId}`);
+    createItemOnPage(`.cars__item-${carId}`, 'div', `cars__inner cars__inner--info cars__inner--info`);
+    createItemOnPage(`.cars__item-${carId} .cars__inner--info`, 'button', 'cars__button cars__button--select', 'select');
+    createItemOnPage(`.cars__item-${carId} .cars__inner--info`, 'button', 'cars__button cars__button--remove', 'remove');
+    createItemOnPage(`.cars__item-${carId} .cars__inner--info`, 'span', 'cars__spacer', '|');
+    createItemOnPage(`.cars__item-${carId} .cars__inner--info`, 'h4', 'cars__model', carName);
+    createItemOnPage(`.cars__item-${carId}`, 'div', `cars__inner cars__inner--game`);
+    createItemOnPage(`.cars__item-${carId} .cars__inner--game`, 'div', `cars__button-wrapper cars__button-wrapper`);
+    createItemOnPage(`.cars__item-${carId} .cars__button-wrapper`, 'button', 'cars__button cars__button--start', 'start');
+    createItemOnPage(`.cars__item-${carId} .cars__button-wrapper`, 'button', 'cars__button cars__button--stop', 'stop');
     const stopButtonEl = document.querySelector(`.cars__item-${carId} .cars__button--stop`) as HTMLButtonElement;
     stopButtonEl.disabled = true;
-    creatAddElementToPage(`.cars__item-${carId} .cars__inner--game`, 'div', `cars__car`);
+    createItemOnPage(`.cars__item-${carId} .cars__inner--game`, 'div', `cars__car`);
     const carElement = document.querySelector(`.cars__item-${carId} .cars__car`) as HTMLElement;
     carElement.innerHTML = carImage;
     carElement.style.fill = carColor;
-    creatAddElementToPage(`.cars__item-${carId} .cars__inner--game`, 'img', `cars__flag`);
+    createItemOnPage(`.cars__item-${carId} .cars__inner--game`, 'img', `cars__flag`);
     const flagElement = document.querySelector(`.cars__item-${carId} .cars__flag`) as HTMLImageElement;
     flagElement.src = flagImage;
   });

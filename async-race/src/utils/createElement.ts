@@ -1,4 +1,4 @@
-function creatAddElementToPage(parentElem: string, tagName: string, className?: string, textContent?: string): void {
+function createItemOnPage(parentElem: string, tagName: string, className?: string, textContent?: string): void {
   const element: HTMLElement = document.createElement(tagName);
   const parentNodeElem: HTMLElement | null = document.querySelector(parentElem);
 
@@ -16,4 +16,4 @@ function creatAddElementToPage(parentElem: string, tagName: string, className?: 
   parentNodeElem.append(element);
 }
 
-export default creatAddElementToPage;
+export default createItemOnPage;

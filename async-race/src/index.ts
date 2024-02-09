@@ -1,6 +1,6 @@
 import './css/normalize.scss';
 import './style.scss';
-import creatAddElementToPage from './utils/createElement';
+import createItemOnPage from './utils/createElement';
 import { documentActions } from './utils/documentActions';
 import createHeader from './userInterface/header';
 import renderInputGroup from './userInterface/main/inputGroup';
@@ -8,9 +8,9 @@ import renderGarage from './userInterface/main/renderGarage';
 import renderWinners from './userInterface/winners';
 import renderFooter from './userInterface/footer';
 
-creatAddElementToPage('body', 'div', 'app');
+createItemOnPage('body', 'div', 'app');
 createHeader();
-creatAddElementToPage('.app', 'main', 'app__main main');
+createItemOnPage('.app', 'main', 'app__main main');
 renderInputGroup();
 await renderGarage();
 renderWinners();
