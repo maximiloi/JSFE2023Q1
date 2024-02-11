@@ -2,12 +2,15 @@ const START_SIZE: number = 160;
 let requestId: number | null = null;
 let position: number = 0;
 
+
 export function animateCar(velocity: number, carElem: HTMLElement): void {
   const carElement: HTMLElement = carElem;
   const traceEl: HTMLElement | null = document.querySelector('.cars__inner');
   if (!traceEl) return;
   const widthRace: number = traceEl.offsetWidth;
   const speed: number = velocity / 30;
+
+  position = 0;
 
   function animate(): void {
     position += speed;
@@ -21,11 +24,20 @@ export function animateCar(velocity: number, carElem: HTMLElement): void {
   animate();
 }
 
-export function stopAnimation(carElem: HTMLElement): void {
+export function stopAnimation(): void {
+  // const carElement: HTMLElement = carElem;
+  if (requestId) {
+    cancelAnimationFrame(requestId);
+    // carElement.style.left = `${position}px`;
+    requestId = null;
+  }
+}
+
+export function resetAnimation(carElem: HTMLElement): void {
   const carElement: HTMLElement = carElem;
   if (requestId) {
     cancelAnimationFrame(requestId);
-    carElement.style.left = `${position}px`;
+    carElement.style.left = '0px';
     requestId = null;
   }
 }

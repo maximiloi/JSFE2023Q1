@@ -1,3 +1,4 @@
+import { stopAnimation } from "../utils/animateCar";
 import checkLocalStorage from "../utils/checkLocalStorage";
 import { Car, CarWithId, CarWinner, CarEngine } from "./apiType";
 
@@ -126,8 +127,7 @@ export async function apiDriveMode(idCar: number): Promise<void> {
     });
 
     if (!response.ok) {
-      console.log('response.status: ', response.status);
-      // throw new Error(`Request failed with status ${response.status}`);
+      stopAnimation();
     }
   } catch (error) {
     throw new Error("Not required apiDriveMode");
