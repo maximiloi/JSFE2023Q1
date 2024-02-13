@@ -22,7 +22,7 @@ interface QueryParamsStart {
 }
 
 function generateQueryString(queryParams: QueryParams[] | QueryParamsStart[] = []): string {
-  return queryParams.length ? `?${queryParams.map((x) => `${x.key}=${x.value}`).join('&')}` : '';
+  return queryParams.length ? `?${queryParams.map((param) => `${param.key}=${param.value}`).join('&')}` : '';
 }
 
 export async function apiNumberCarsInGarage(): Promise<number> {
