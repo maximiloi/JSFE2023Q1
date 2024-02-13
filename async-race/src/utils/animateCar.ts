@@ -23,17 +23,15 @@ export function animateCar(velocity: number, carElem: HTMLElement): void {
   animate();
 }
 
-export function resetCar(carElem: HTMLElement): void {
-  const carElement: HTMLElement = carElem;
-  carElement.style.transform = `translateX(0px) scaleX(-1)`;
-  if (requestId) {
-    requestId = null;
-  }
-}
-
 export function stopAnimation(): void {
   if (requestId) {
     cancelAnimationFrame(requestId);
     requestId = null;
   }
+}
+
+export function resetCar(carElem: HTMLElement): void {
+  const carElement: HTMLElement = carElem;
+  carElement.style.transform = `translateX(0px) scaleX(-1)`;
+  stopAnimation();
 }
