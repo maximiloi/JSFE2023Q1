@@ -2,7 +2,6 @@ const START_SIZE: number = 160;
 let requestId: number | null = null;
 let position: number = 0;
 
-
 export function animateCar(velocity: number, carElem: HTMLElement): void {
   const carElement: HTMLElement = carElem;
   const traceEl: HTMLElement | null = document.querySelector('.cars__inner');
@@ -14,7 +13,7 @@ export function animateCar(velocity: number, carElem: HTMLElement): void {
 
   function animate(): void {
     position += speed;
-    carElement.style.left = `${position}px`;
+    carElement.style.transform = `translateX(${position}px) scaleX(-1)`;
 
     if (position + START_SIZE < widthRace) {
       requestId = requestAnimationFrame(animate);
@@ -24,20 +23,17 @@ export function animateCar(velocity: number, carElem: HTMLElement): void {
   animate();
 }
 
-export function stopAnimation(): void {
-  // const carElement: HTMLElement = carElem;
+export function resetCar(carElem: HTMLElement): void {
+  const carElement: HTMLElement = carElem;
+  carElement.style.transform = `translateX(0px) scaleX(-1)`;
   if (requestId) {
-    cancelAnimationFrame(requestId);
-    // carElement.style.left = `${position}px`;
     requestId = null;
   }
 }
 
-export function resetAnimation(carElem: HTMLElement): void {
-  const carElement: HTMLElement = carElem;
+export function stopAnimation(): void {
   if (requestId) {
     cancelAnimationFrame(requestId);
-    carElement.style.left = '0px';
     requestId = null;
   }
 }
